@@ -3,35 +3,42 @@
 This repository will hold my individual project for the semester.
 
 ### Problem Statement
+This program will be a task list / time tracker for the game *Path of Exile*. It will help optimize speedrunning
+through the first portion of the game. 
 
-I'm trying to solve the issues my friends are having with planning events by combining all of our schedules
-into one big calender / list for all of us to edit and view. Might include event list and planner
+![Path of Exile Logo](src/main/webapp/images/poeLogo.png)
 
-///
+**Main Features**:
+* Task List (Quest Watcher)
+* Timer and Sets
+* User Set Goals / Tasks
+* User Profile and Build Planner
 
-I'm trying to create a program that will track the speed of a run through "Path of Exile" to optimize initial
-play through of the main game. This will include a timer, stats, and tasks to complete.
+**Secondary Features**:
+* Item Search
+* Stash Tab Viewer
+* Player Search 
 
+>"When the time comes to strike an emperor strikes without hesitation. 
+>To entertain doubt is to dance with death." -Emperor Izaro
 
 ### Project Technologies/Techniques 
-
-#### Under Construction!!
 
 * Security/Authentication
   * Tomcat's JDBC Realm Authentication
   * Admin role: create/read/update/delete (crud) of all data
-  * User role: create ...
-  * All: anyone can view ...
+  * User role: create and personalize user page, can add / remove tasks
+  * All: anyone can view users and stash tabs. Can look up items.
 * Database
   * MySQL
   * Store users and roles
-  * Store all data for ...
+  * Store all data for items and tasks.
 * ORM Framework
   * Hibernate 5
 * Dependency Management
   * Maven
 * Web Services consumed using Java
-  * 
+  *
 * CSS 
   * 
 * Data Validation
@@ -42,11 +49,9 @@ play through of the main game. This will include a timer, stats, and tasks to co
 * Hosting
   * AWS
 * Independent Research Topic/s
-  * CI tools in AWS
-  * Materialize
-  * ESRI Maps API
-  * Hibernate Validation
-  * Hibernat Search
+  * POE Item List API
+  * POE Player List API
+  * POE Stash Tab API
 * Project Lombok to eliminate boilerplate code like getters/setters/equals
 * Unit Testing
   * JUnit tests to achieve 80%+ code coverage 
@@ -56,10 +61,10 @@ play through of the main game. This will include a timer, stats, and tasks to co
 ### Design
 
 * [User Stories](DesignDocuments/userStories.md)
-* [Screen Design](DesignDocuments/Screens.md)
+* [Screen Design](DesignDocuments/screens.md)
 * [Application Flow](DesignDocuments/applicationFlow.md)
 * [Database Design](DesignDocuments/databaseDiagram.png)
 
-### [Project Plan](ProjectPlan.md)
+### [Project Plan](projectPlan.md)
 
 ### [Weekly Reflection](TimeLog.md)
