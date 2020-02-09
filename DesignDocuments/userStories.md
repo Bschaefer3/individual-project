@@ -1,22 +1,22 @@
 # User Stories
 
 
-### Sign Up
+### Sign Up (MVC)
 As a new user I want to create an account so that I can add my build settings, 
 and create goals
 
-### Sign In
+### Sign In (MVC)
 As a registered user I want to log in so that I can add or edit my goals 
 and build settings
 
-### Account Settings
+### Account Settings (MVC)
 As a registered user I want to edit my account settings such as Name, Bio, 
 and build settings
 
-### Task List
+### Task List (MVC)
 As a registered user I want to check my goals and tasks, and also edit them
 
-### Build Settings
+### Build Settings (MVC)
 As a registered user I want to edit my build settings
 
 ### Item Search

@@ -7,4 +7,5 @@ Weekly Reflection
 | 1/22/20| Created my personal workspace environment| 2 | Personalization is key!|
 | 1/25/20| Completed watching week 1 and week 1 tasks| 2| |
 | 1/27/20| Copied and Edited the base individual project files for Week 2 | 0| |
-| 2/
+| 2/02/20| Completed Week 2 Tasks, Prepped for Indie Project CP1| 2| |
+| 2/09/20| Completed Indie Project CP1, Completed Week 3 Tasks| 4| |

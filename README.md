@@ -1,10 +1,10 @@
-# Ben Schaefer Indie Project
+#### Ben Schaefer's
+# Exile Tracker
 
-This repository will hold my individual project for the semester.
 
 ### Problem Statement
 This program will be a task list / time tracker for the game *Path of Exile*. It will help optimize speedrunning
-through the first portion of the game. 
+through the first portion of the game. It will come packed with extra features for versatility and fun.
 
 ![Path of Exile Logo](src/main/webapp/images/poeLogo.png)
 
@@ -43,9 +43,8 @@ through the first portion of the game.
   * 
 * Data Validation
   * Bootstrap Validator for front end
-  * Explore Hibernate's validation
 * Logging
-  * Configurable logging using Log4J2. In production, only errors will normally be logged, but logging at a debug level can be turned on to facilitate trouble-shooting. 
+  * Configurable logging using Log4J2. 
 * Hosting
   * AWS
 * Independent Research Topic/s
