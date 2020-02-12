@@ -6,10 +6,19 @@
 This program will be a task list / time tracker for the game *Path of Exile*. It will help optimize speedrunning
 through the first portion of the game. It will come packed with extra features for versatility and fun.
 
+ Path of Exile is an online Action RPG set in a dark fantasy world created by Grinding Gear Games.
+ With a focus on visceral action combat, powerful items and deep character customization, players 
+ can change the way they play the game from start to finish. 
+
 ![Path of Exile Logo](src/main/webapp/images/poeLogo.png)
 
+There are two portions to the game. The story and the end game. Players are constantly pushing to get through
+the story as fast as possible because 90% of the games content falls in the end game. This tool serves to make 
+getting through the story portion as fast as possible by eliminating useless quests and recommending 
+useful tactics and items to aid the player. 
+
 **Main Features**:
-* Task List (Quest Watcher)
+* Task List and Quest Watcher
 * Timer and Sets
 * User Set Goals / Tasks
 * User Profile and Build Planner
@@ -22,13 +31,14 @@ through the first portion of the game. It will come packed with extra features f
 >"When the time comes to strike an emperor strikes without hesitation. 
 >To entertain doubt is to dance with death." -Emperor Izaro
 
+![Path of Exile Art](src/main/webapp/images/poeArt.png)
 ### Project Technologies/Techniques 
 
 * Security/Authentication
   * Tomcat's JDBC Realm Authentication
   * Admin role: create/read/update/delete (crud) of all data
   * User role: create and personalize user page, can add / remove tasks
-  * All: anyone can view users and stash tabs. Can look up items.
+  * All: anyone can view users and stash tabs. Can look up items, users, and view the tips page
 * Database
   * MySQL
   * Store users and roles

@@ -2,13 +2,13 @@
 
 
 ### Week 3
-- [ ] Weekly Journal Entry
-- [ ] Project Plan
-- [ ] Mock-ups
-- [ ] User Stories
-- [ ] Research POE API's
-- [ ] Complete Week 3 Assignment
-- [ ] Prepare for Indie Project Checkpoint 1
+- [X] Weekly Journal Entry
+- [X] Project Plan
+- [X] Mock-ups
+- [X] User Stories
+- [X] Research POE API's
+- [X] Complete Week 3 Assignment
+- [X] Prepare for Indie Project Checkpoint 1
 
 ### Week 4
 - [ ] Weekly Journal Entry
@@ -27,3 +27,36 @@
 ### Week 7
 - [ ] Weekly Journal Entry
 - [ ] 
+
+### Week 8
+- [ ] Weekly Journal Entry
+- [ ] 
+
+### Week 9
+- [ ] Weekly Journal Entry
+- [ ] 
+
+### Week 10
+- [ ] Weekly Journal Entry
+- [ ] 
+
+### Week 11
+- [ ] Weekly Journal Entry
+- [ ] 
+
+### Week 12
+- [ ] Weekly Journal Entry
+- [ ] 
+
+### Week 13
+- [ ] Weekly Journal Entry
+- [ ] 
+
+### Week 14
+- [ ] Weekly Journal Entry
+- [ ] 
+
+### Week 15
+- [ ] Weekly Journal Entry
+- [ ] 
+
