@@ -6,9 +6,9 @@
 This program will be a task list / time tracker for the game *Path of Exile*. It will help optimize speedrunning
 through the first portion of the game. It will come packed with extra features for versatility and fun.
 
- Path of Exile is an online Action RPG set in a dark fantasy world created by Grinding Gear Games.
- With a focus on visceral action combat, powerful items and deep character customization, players 
- can change the way they play the game from start to finish. 
+Path of Exile is an online Action RPG set in a dark fantasy world created by Grinding Gear Games.
+With a focus on visceral action combat, powerful items and deep character customization, players 
+can change the way they play the game from start to finish. 
 
 ![Path of Exile Logo](src/main/webapp/images/poeLogo.png)
 
@@ -22,6 +22,7 @@ useful tactics and items to aid the player.
 * Timer and Sets
 * User Set Goals / Tasks
 * User Profile and Build Planner
+* Tips and More Page
 
 **Secondary Features**:
 * Item Search
