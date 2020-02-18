@@ -1,12 +1,20 @@
-package com.sample;
+package project.entity;
+
+import org.hibernate.annotations.GenericGenerator;
+import javax.persistence.*;
 
 /**
- * A class to represent the user
+ * A class to represent the user in my POETracker application
  *
  * @author Ben Schaefer
  */
+@Entity(name = "User")
+@Table(name = "user")
 public class User {
 
+  @Id
+  @GeneratedValue(strategy= GenerationType.AUTO, generator="native")
+  @GenericGenerator(name = "native",strategy = "native")
   private int id;
   private String username;
   private String password;
@@ -48,7 +56,7 @@ public class User {
    * sets the unique id
    * @param id
    */
-  public void setId(long id) {
+  public void setId(int id) {
     this.id = id;
   }
 

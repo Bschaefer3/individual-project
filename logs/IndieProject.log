@@ -1,0 +1,16 @@
+[DEBUG] 2020-02-17 22:13:52.238 [main] UserDao - Searching for user with lastname = Coomer
+[DEBUG] 2020-02-17 22:14:13.366 [main] UserDao - Searching for user with lastname = Coomer
+[DEBUG] 2020-02-17 22:17:48.819 [main] UserDao - Searching for user with lastname = Coomer
+[DEBUG] 2020-02-17 22:18:22.163 [main] UserDao - Searching for user with lastname = Coomer
+[DEBUG] 2020-02-17 22:19:52.546 [main] UserDao - Searching for user with lastname = Coomer
+[DEBUG] 2020-02-17 22:25:22.694 [main] UserDao - Searching for user with lastname = Coomer
+[DEBUG] 2020-02-17 22:26:11.726 [main] UserDao - Searching for user with lastname = Coomer
+[DEBUG] 2020-02-17 22:32:38.972 [main] UserDao - Searching for user with lastname = Coomer
+[DEBUG] 2020-02-17 23:11:13.672 [main] UserDao - The list of users [project.entity.User@7f6b7426, project.entity.User@6eda012b, project.entity.User@781dbe44]
+[DEBUG] 2020-02-17 23:12:29.636 [main] UserDao - The list of users [project.entity.User@1b17d8ab, project.entity.User@28989415, project.entity.User@6eda012b]
+[DEBUG] 2020-02-17 23:12:29.641 [main] UserDao - Searching for user with lastname = Coomer
+[DEBUG] 2020-02-17 23:13:32.724 [main] UserDao - The list of users [project.entity.User@1b17d8ab, project.entity.User@28989415, project.entity.User@6eda012b]
+[DEBUG] 2020-02-17 23:13:32.732 [main] UserDao - Searching for user with lastname = 
+[DEBUG] 2020-02-17 23:13:54.815 [main] UserDao - The list of users [project.entity.User@3cc3f13e, project.entity.User@482ba4b1, project.entity.User@307af381]
+[DEBUG] 2020-02-17 23:13:54.823 [main] UserDao - Searching for user with lastname = 
+[DEBUG] 2020-02-17 23:15:11.687 [main] UserDao - The list of users [project.entity.User@6c8f4bc7, project.entity.User@2fdf22f7, project.entity.User@3a2546d6]
