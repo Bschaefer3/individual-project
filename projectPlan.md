@@ -11,9 +11,10 @@
 - [X] Prepare for Indie Project Checkpoint 1
 
 ### Week 4
-- [ ] Weekly Journal Entry
-- [ ] Complete database design
-- [ ] Complete Week 4 Assignment
+- [X] Weekly Journal Entry
+- [X] Complete database design
+- [X] Start Database
+- [X] Complete Week 4 Assignment
 - [ ] Prepare for Week 5 peer design/code review
 
 ### Week 5

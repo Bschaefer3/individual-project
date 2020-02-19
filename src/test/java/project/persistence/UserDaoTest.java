@@ -2,22 +2,27 @@ package project.persistence;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import project.entity.User;
 
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
+/**
+ * Test Class for UserDao, Tests Database methods
+ */
 public class UserDaoTest {
 
     UserDao dao;
     private final Logger logger = LogManager.getLogger(this.getClass());
 
 
+    /**
+     * Resets the Database back to it's normal state
+     */
     @BeforeEach
     void setUp() {
 
@@ -29,6 +34,9 @@ public class UserDaoTest {
     }
 
 
+    /**
+     * Checks to see if getById works
+     */
     @Test
     void getByIdSuccess() {
 
@@ -39,6 +47,9 @@ public class UserDaoTest {
 
     }
 
+    /**
+     * Checks to see if the database updates correctly
+     */
     @Test
     void saveOrUpdateSuccess() {
         User userToUpdate = dao.getById(3);
@@ -50,6 +61,9 @@ public class UserDaoTest {
 
     }
 
+    /**
+     * Checks to see if inserting into the database works
+     */
     @Test
     void insertSuccess() {
         User newUser = new User();
@@ -64,6 +78,9 @@ public class UserDaoTest {
 
     }
 
+    /**
+     * Checks to see if you can delete from the database successfully
+     */
     @Test
     void deleteSuccess() {
         User toBeDeleted = dao.getById(1);
@@ -73,6 +90,9 @@ public class UserDaoTest {
 
     }
 
+    /**
+     * Checks to see if you can grab all users in the database
+     */
     @Test
     void getAllSuccess() {
         List<User> users = dao.getAll();
