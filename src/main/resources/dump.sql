@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.16, for Linux (x86_64)
 --
--- Host: 127.0.0.1    Database: POETracker
+-- Host: 127.0.0.1    Database: IndieProject
 -- ------------------------------------------------------
 -- Server version	8.0.16
 
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-02-17 19:29:30
+-- Dump completed on 2020-02-19 16:10:49

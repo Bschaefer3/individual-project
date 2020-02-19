@@ -15,11 +15,13 @@
 - [X] Complete database design
 - [X] Start Database
 - [X] Complete Week 4 Assignment
-- [ ] Prepare for Week 5 peer design/code review
+- [X] Prepare for Week 5 peer design/code review
 
 ### Week 5
 - [ ] Weekly Journal Entry
-- [ ] 
+- [ ] Set up Project Lombok
+- [ ] Complete Week 5 Demo
+- [ ] Complete Week 5 Exercise
 
 ### Week 6
 - [ ] Weekly Journal Entry

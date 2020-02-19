@@ -27,9 +27,7 @@ public class UserDaoTest {
     void setUp() {
 
         project.test.util.Database database = project.test.util.Database.getInstance();
-        database.runSQL("cleandb1.sql");
-        database.runSQL("cleandb2.sql");
-        database.runSQL("cleandb3.sql");
+        database.runSQL("cleandb.sql");
         dao = new UserDao();
     }
 
