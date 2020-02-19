@@ -68,12 +68,8 @@ public class UserDaoTest {
     void deleteSuccess() {
         User toBeDeleted = dao.getById(1);
         dao.delete(toBeDeleted);
-        User newUser = new User();
-        newUser.setId(1);
-        newUser.setFirstname("Jake");
-        dao.insert(newUser);
         User retrievedUser = dao.getById(1);
-        assertEquals("Jake", retrievedUser.getFirstname());
+        assertNull(retrievedUser);
 
     }
 
