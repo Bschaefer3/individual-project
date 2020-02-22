@@ -8,9 +8,9 @@ import javax.persistence.*;
  *
  * @author Ben Schaefer
  */
-@Entity(name = "User")
-@Table(name = "user")
-public class User {
+@Entity(name = "Users")
+@Table(name = "users")
+public class Users {
 
   @Id
   @GeneratedValue(strategy= GenerationType.AUTO, generator="native")
@@ -24,7 +24,7 @@ public class User {
   /**
    * Instantiates a new User object
    */
-  public User() {
+  public Users() {
   }
 
   /**
@@ -36,7 +36,7 @@ public class User {
    * @param firstname the user's first name
    * @param lastname  the user's last name
    */
-  public User(int id, String username, String password, String firstname, String lastname) {
+  public Users(int id, String username, String password, String firstname, String lastname) {
     this.id = id;
     this.username = username;
     this.password = password;

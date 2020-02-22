@@ -1,6 +1,6 @@
 package project.persistence;
 
-import project.entity.User;
+import project.entity.Users;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
@@ -10,7 +10,7 @@ import org.hibernate.Transaction;
 import javax.persistence.criteria.*;
 import java.util.List;
 
-public class UserDao {
+public class UsersDao {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
     SessionFactory sessionFactory = SessionFactoryProvider.getSessionFactory();
@@ -18,9 +18,9 @@ public class UserDao {
     /**
      * Get user by id
      */
-    public User getById(int id) {
+    public Users getById(int id) {
         Session session = sessionFactory.openSession();
-        User user = session.get( User.class, id );
+        Users user = session.get( Users.class, id );
         session.close();
         return user;
     }
@@ -29,7 +29,7 @@ public class UserDao {
      * update user
      * @param user  User to be inserted or updated
      */
-    public void saveOrUpdate(User user) {
+    public void saveOrUpdate(Users user) {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
         session.saveOrUpdate(user);
@@ -41,7 +41,7 @@ public class UserDao {
      * update user
      * @param user  User to be inserted or updated
      */
-    public int insert(User user) {
+    public int insert(Users user) {
         int id = 0;
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
@@ -55,7 +55,7 @@ public class UserDao {
      * Delete a user
      * @param user User to be deleted
      */
-    public void delete(User user) {
+    public void delete(Users user) {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
         session.delete(user);
@@ -68,14 +68,14 @@ public class UserDao {
      *
      * @return All users
      */
-    public List<User> getAll() {
+    public List<Users> getAll() {
 
         Session session = sessionFactory.openSession();
 
         CriteriaBuilder builder = session.getCriteriaBuilder();
-        CriteriaQuery<User> query = builder.createQuery( User.class );
-        Root<User> root = query.from( User.class );
-        List<User> users = session.createQuery( query ).getResultList();
+        CriteriaQuery<Users> query = builder.createQuery( Users.class );
+        Root<Users> root = query.from( Users.class );
+        List<Users> users = session.createQuery( query ).getResultList();
 
         logger.debug("The list of users " + users);
         session.close();
@@ -87,16 +87,16 @@ public class UserDao {
      * Get user by property (exact match)
      * sample usage: getByPropertyEqual("lastname", "Curry")
      */
-    public List<User> getByPropertyEqual(String propertyName, String value) {
+    public List<Users> getByPropertyEqual(String propertyName, String value) {
         Session session = sessionFactory.openSession();
 
         logger.debug("Searching for user with " + propertyName + " = " + value);
 
         CriteriaBuilder builder = session.getCriteriaBuilder();
-        CriteriaQuery<User> query = builder.createQuery( User.class );
-        Root<User> root = query.from( User.class );
+        CriteriaQuery<Users> query = builder.createQuery( Users.class );
+        Root<Users> root = query.from( Users.class );
         query.select(root).where(builder.equal(root.get(propertyName), value));
-        List<User> users = session.createQuery( query ).getResultList();
+        List<Users> users = session.createQuery( query ).getResultList();
 
         session.close();
         return users;
@@ -106,19 +106,19 @@ public class UserDao {
      * Get user by property (like)
      * sample usage: getByPropertyLike("lastname", "C")
      */
-    public List<User> getByPropertyLike(String propertyName, String value) {
+    public List<Users> getByPropertyLike(String propertyName, String value) {
         Session session = sessionFactory.openSession();
 
         logger.debug("Searching for user with {} = {}",  propertyName, value);
 
         CriteriaBuilder builder = session.getCriteriaBuilder();
-        CriteriaQuery<User> query = builder.createQuery( User.class );
-        Root<User> root = query.from( User.class );
+        CriteriaQuery<Users> query = builder.createQuery( Users.class );
+        Root<Users> root = query.from( Users.class );
         Expression<String> propertyPath = root.get(propertyName);
 
         query.where(builder.like(propertyPath, "%" + value + "%"));
 
-        List<User> users = session.createQuery( query ).getResultList();
+        List<Users> users = session.createQuery( query ).getResultList();
         session.close();
         return users;
     }

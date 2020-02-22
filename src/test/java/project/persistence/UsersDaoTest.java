@@ -4,7 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import project.entity.User;
+import project.entity.Users;
 
 import java.util.List;
 
@@ -14,9 +14,9 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 /**
  * Test Class for UserDao, Tests Database methods
  */
-public class UserDaoTest {
+public class UsersDaoTest {
 
-    UserDao dao;
+    UsersDao dao;
     private final Logger logger = LogManager.getLogger(this.getClass());
 
 
@@ -28,7 +28,7 @@ public class UserDaoTest {
 
         project.test.util.Database database = project.test.util.Database.getInstance();
         database.runSQL("cleandb.sql");
-        dao = new UserDao();
+        dao = new UsersDao();
     }
 
 
@@ -38,7 +38,7 @@ public class UserDaoTest {
     @Test
     void getByIdSuccess() {
 
-        User retrievedUser = dao.getById(3);
+        Users retrievedUser = dao.getById(3);
         assertEquals("Arsim", retrievedUser.getFirstname());
         assertEquals("Odza", retrievedUser.getLastname());
         assertEquals("Kurumu", retrievedUser.getUsername());
@@ -50,11 +50,11 @@ public class UserDaoTest {
      */
     @Test
     void saveOrUpdateSuccess() {
-        User userToUpdate = dao.getById(3);
+        Users userToUpdate = dao.getById(3);
         String newLastName = "Bungus";
         userToUpdate.setLastname(newLastName);
         dao.saveOrUpdate(userToUpdate);
-        User retrievedUser = dao.getById(3);
+        Users retrievedUser = dao.getById(3);
         assertEquals(newLastName, retrievedUser.getLastname());
 
     }
@@ -64,14 +64,14 @@ public class UserDaoTest {
      */
     @Test
     void insertSuccess() {
-        User newUser = new User();
+        Users newUser = new Users();
         newUser.setId(1);
         newUser.setUsername("Meaty");
         newUser.setPassword("shakeshacc");
         newUser.setFirstname("Cameron");
         newUser.setLastname("Coomer");
         dao.insert(newUser);
-        User retrievedUser = dao.getById(4);
+        Users retrievedUser = dao.getById(4);
         assertEquals("Coomer", retrievedUser.getLastname());
 
     }
@@ -81,9 +81,9 @@ public class UserDaoTest {
      */
     @Test
     void deleteSuccess() {
-        User toBeDeleted = dao.getById(1);
+        Users toBeDeleted = dao.getById(1);
         dao.delete(toBeDeleted);
-        User retrievedUser = dao.getById(1);
+        Users retrievedUser = dao.getById(1);
         assertNull(retrievedUser);
 
     }
@@ -93,7 +93,7 @@ public class UserDaoTest {
      */
     @Test
     void getAllSuccess() {
-        List<User> users = dao.getAll();
+        List<Users> users = dao.getAll();
         assertEquals(3, users.size());
 
     }

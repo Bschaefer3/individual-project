@@ -6,42 +6,42 @@
 [DEBUG] 2020-02-17 22:25:22.694 [main] UserDao - Searching for user with lastname = Coomer
 [DEBUG] 2020-02-17 22:26:11.726 [main] UserDao - Searching for user with lastname = Coomer
 [DEBUG] 2020-02-17 22:32:38.972 [main] UserDao - Searching for user with lastname = Coomer
-[DEBUG] 2020-02-17 23:11:13.672 [main] UserDao - The list of users [project.entity.User@7f6b7426, project.entity.User@6eda012b, project.entity.User@781dbe44]
-[DEBUG] 2020-02-17 23:12:29.636 [main] UserDao - The list of users [project.entity.User@1b17d8ab, project.entity.User@28989415, project.entity.User@6eda012b]
+[DEBUG] 2020-02-17 23:11:13.672 [main] UserDao - The list of users [project.entity.Users@7f6b7426, project.entity.Users@6eda012b, project.entity.Users@781dbe44]
+[DEBUG] 2020-02-17 23:12:29.636 [main] UserDao - The list of users [project.entity.Users@1b17d8ab, project.entity.Users@28989415, project.entity.Users@6eda012b]
 [DEBUG] 2020-02-17 23:12:29.641 [main] UserDao - Searching for user with lastname = Coomer
-[DEBUG] 2020-02-17 23:13:32.724 [main] UserDao - The list of users [project.entity.User@1b17d8ab, project.entity.User@28989415, project.entity.User@6eda012b]
+[DEBUG] 2020-02-17 23:13:32.724 [main] UserDao - The list of users [project.entity.Users@1b17d8ab, project.entity.Users@28989415, project.entity.Users@6eda012b]
 [DEBUG] 2020-02-17 23:13:32.732 [main] UserDao - Searching for user with lastname = 
-[DEBUG] 2020-02-17 23:13:54.815 [main] UserDao - The list of users [project.entity.User@3cc3f13e, project.entity.User@482ba4b1, project.entity.User@307af381]
+[DEBUG] 2020-02-17 23:13:54.815 [main] UserDao - The list of users [project.entity.Users@3cc3f13e, project.entity.Users@482ba4b1, project.entity.Users@307af381]
 [DEBUG] 2020-02-17 23:13:54.823 [main] UserDao - Searching for user with lastname = 
-[DEBUG] 2020-02-17 23:15:11.687 [main] UserDao - The list of users [project.entity.User@6c8f4bc7, project.entity.User@2fdf22f7, project.entity.User@3a2546d6]
-[DEBUG] 2020-02-19 15:34:58.221 [main] UserDao - The list of users [project.entity.User@2bfc2f8b, project.entity.User@61853c7e, project.entity.User@32e5af53]
+[DEBUG] 2020-02-17 23:15:11.687 [main] UserDao - The list of users [project.entity.Users@6c8f4bc7, project.entity.Users@2fdf22f7, project.entity.Users@3a2546d6]
+[DEBUG] 2020-02-19 15:34:58.221 [main] UserDao - The list of users [project.entity.Users@2bfc2f8b, project.entity.Users@61853c7e, project.entity.Users@32e5af53]
 [ERROR] 2020-02-19 16:01:02.579 [main] Database - java.sql.SQLException: Cannot drop table 'user' referenced by a foreign key constraint 'tasks_user_id_fk' on table 'tasks'.
 [ERROR] 2020-02-19 16:01:02.637 [main] Database - java.sql.SQLException: Cannot drop table 'user' referenced by a foreign key constraint 'tasks_user_id_fk' on table 'tasks'.
-[DEBUG] 2020-02-19 16:01:02.780 [main] UserDao - The list of users [project.entity.User@59d6642a, project.entity.User@365cef67, project.entity.User@27df5806]
+[DEBUG] 2020-02-19 16:01:02.780 [main] UserDao - The list of users [project.entity.Users@59d6642a, project.entity.Users@365cef67, project.entity.Users@27df5806]
 [ERROR] 2020-02-19 16:01:02.803 [main] Database - java.sql.SQLException: Cannot drop table 'user' referenced by a foreign key constraint 'tasks_user_id_fk' on table 'tasks'.
 [ERROR] 2020-02-19 16:01:02.830 [main] Database - java.sql.SQLException: Cannot drop table 'user' referenced by a foreign key constraint 'tasks_user_id_fk' on table 'tasks'.
 [ERROR] 2020-02-19 16:02:37.957 [main] Database - java.sql.SQLException: Cannot drop table 'user' referenced by a foreign key constraint 'tasks_user_id_fk' on table 'tasks'.
 [ERROR] 2020-02-19 16:02:39.549 [main] Database - java.sql.SQLException: Cannot drop table 'user' referenced by a foreign key constraint 'tasks_user_id_fk' on table 'tasks'.
 [ERROR] 2020-02-19 16:02:39.592 [main] Database - java.sql.SQLException: Cannot drop table 'user' referenced by a foreign key constraint 'tasks_user_id_fk' on table 'tasks'.
-[DEBUG] 2020-02-19 16:02:39.738 [main] UserDao - The list of users [project.entity.User@4aa22cc2, project.entity.User@2049e582, project.entity.User@464aeb09, project.entity.User@2c99c8d]
+[DEBUG] 2020-02-19 16:02:39.738 [main] UserDao - The list of users [project.entity.Users@4aa22cc2, project.entity.Users@2049e582, project.entity.Users@464aeb09, project.entity.Users@2c99c8d]
 [ERROR] 2020-02-19 16:02:39.758 [main] Database - java.sql.SQLException: Cannot drop table 'user' referenced by a foreign key constraint 'tasks_user_id_fk' on table 'tasks'.
 [ERROR] 2020-02-19 16:02:39.781 [main] Database - java.sql.SQLException: Cannot drop table 'user' referenced by a foreign key constraint 'tasks_user_id_fk' on table 'tasks'.
 [ERROR] 2020-02-19 16:05:28.973 [main] Database - java.sql.SQLException: Cannot drop table 'user' referenced by a foreign key constraint 'tasks_user_id_fk' on table 'tasks'.
 [ERROR] 2020-02-19 16:05:33.594 [main] Database - java.sql.SQLException: Cannot drop table 'user' referenced by a foreign key constraint 'tasks_user_id_fk' on table 'tasks'.
 [ERROR] 2020-02-19 16:05:33.744 [main] Database - java.sql.SQLException: Cannot drop table 'user' referenced by a foreign key constraint 'tasks_user_id_fk' on table 'tasks'.
-[DEBUG] 2020-02-19 16:05:33.994 [main] UserDao - The list of users [project.entity.User@652e345, project.entity.User@7574d4ad, project.entity.User@7bede4ea, project.entity.User@713999c2]
+[DEBUG] 2020-02-19 16:05:33.994 [main] UserDao - The list of users [project.entity.Users@652e345, project.entity.Users@7574d4ad, project.entity.Users@7bede4ea, project.entity.Users@713999c2]
 [ERROR] 2020-02-19 16:05:34.067 [main] Database - java.sql.SQLException: Cannot drop table 'user' referenced by a foreign key constraint 'tasks_user_id_fk' on table 'tasks'.
 [ERROR] 2020-02-19 16:05:34.121 [main] Database - java.sql.SQLException: Cannot drop table 'user' referenced by a foreign key constraint 'tasks_user_id_fk' on table 'tasks'.
 [ERROR] 2020-02-19 16:05:59.087 [main] Database - java.sql.SQLException: Cannot drop table 'user' referenced by a foreign key constraint 'tasks_user_id_fk' on table 'tasks'.
 [ERROR] 2020-02-19 16:06:01.014 [main] Database - java.sql.SQLException: Cannot drop table 'user' referenced by a foreign key constraint 'tasks_user_id_fk' on table 'tasks'.
 [ERROR] 2020-02-19 16:06:01.045 [main] Database - java.sql.SQLException: Cannot drop table 'user' referenced by a foreign key constraint 'tasks_user_id_fk' on table 'tasks'.
-[DEBUG] 2020-02-19 16:06:01.159 [main] UserDao - The list of users [project.entity.User@69bc9584, project.entity.User@3214bad, project.entity.User@52d7ab79, project.entity.User@f95d64d]
+[DEBUG] 2020-02-19 16:06:01.159 [main] UserDao - The list of users [project.entity.Users@69bc9584, project.entity.Users@3214bad, project.entity.Users@52d7ab79, project.entity.Users@f95d64d]
 [ERROR] 2020-02-19 16:06:01.178 [main] Database - java.sql.SQLException: Cannot drop table 'user' referenced by a foreign key constraint 'tasks_user_id_fk' on table 'tasks'.
 [ERROR] 2020-02-19 16:06:01.199 [main] Database - java.sql.SQLException: Cannot drop table 'user' referenced by a foreign key constraint 'tasks_user_id_fk' on table 'tasks'.
 [ERROR] 2020-02-19 16:07:07.379 [main] Database - java.sql.SQLException: Cannot drop table 'user' referenced by a foreign key constraint 'tasks_user_id_fk' on table 'tasks'.
 [ERROR] 2020-02-19 16:07:09.720 [main] Database - java.sql.SQLException: Cannot drop table 'user' referenced by a foreign key constraint 'tasks_user_id_fk' on table 'tasks'.
 [ERROR] 2020-02-19 16:07:09.787 [main] Database - java.sql.SQLException: Cannot drop table 'user' referenced by a foreign key constraint 'tasks_user_id_fk' on table 'tasks'.
-[DEBUG] 2020-02-19 16:07:09.912 [main] UserDao - The list of users [project.entity.User@4aa22cc2, project.entity.User@2049e582, project.entity.User@464aeb09, project.entity.User@2c99c8d]
+[DEBUG] 2020-02-19 16:07:09.912 [main] UserDao - The list of users [project.entity.Users@4aa22cc2, project.entity.Users@2049e582, project.entity.Users@464aeb09, project.entity.Users@2c99c8d]
 [ERROR] 2020-02-19 16:07:09.941 [main] Database - java.sql.SQLException: Cannot drop table 'user' referenced by a foreign key constraint 'tasks_user_id_fk' on table 'tasks'.
 [ERROR] 2020-02-19 16:07:09.974 [main] Database - java.sql.SQLException: Cannot drop table 'user' referenced by a foreign key constraint 'tasks_user_id_fk' on table 'tasks'.
 [ERROR] 2020-02-19 16:09:06.833 [main] Database - java.sql.SQLException: No database selected
@@ -49,5 +49,5 @@
 [ERROR] 2020-02-19 16:09:08.611 [main] Database - java.sql.SQLException: No database selected
 [ERROR] 2020-02-19 16:09:08.732 [main] Database - java.sql.SQLException: No database selected
 [ERROR] 2020-02-19 16:09:08.760 [main] Database - java.sql.SQLException: No database selected
-[DEBUG] 2020-02-19 16:11:53.102 [main] UserDao - The list of users [project.entity.User@2bfc2f8b, project.entity.User@61853c7e, project.entity.User@32e5af53]
-[DEBUG] 2020-02-19 16:14:26.510 [main] UserDao - The list of users [project.entity.User@5873f3f0, project.entity.User@684372d0, project.entity.User@63dda940]
+[DEBUG] 2020-02-19 16:11:53.102 [main] UserDao - The list of users [project.entity.Users@2bfc2f8b, project.entity.Users@61853c7e, project.entity.Users@32e5af53]
+[DEBUG] 2020-02-19 16:14:26.510 [main] UserDao - The list of users [project.entity.Users@5873f3f0, project.entity.Users@684372d0, project.entity.Users@63dda940]
