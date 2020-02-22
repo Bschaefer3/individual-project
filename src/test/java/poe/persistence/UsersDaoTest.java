@@ -114,9 +114,12 @@ public class UsersDaoTest {
         Tasks task = new Tasks(newUser, description, taskComplete);
         newUser.addTask(task);
 
+        TasksDao tasksDao = new TasksDao();
+
         dao.insert(newUser);
         Users retrievedUser = dao.getById(4);
-        assertEquals(3, retrievedUser.getTasks().size());
+        assertEquals(1, retrievedUser.getTasks().size());
+        assertEquals(3, tasksDao.getAll().size());
 
     }
 
