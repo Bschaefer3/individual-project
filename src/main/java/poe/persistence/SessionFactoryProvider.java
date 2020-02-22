@@ -1,4 +1,4 @@
-package project.persistence;
+package poe.persistence;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;

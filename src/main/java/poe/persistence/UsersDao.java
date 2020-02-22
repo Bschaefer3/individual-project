@@ -1,6 +1,6 @@
-package project.persistence;
+package poe.persistence;
 
-import project.entity.Users;
+import poe.entity.Users;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;

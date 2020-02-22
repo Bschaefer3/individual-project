@@ -1,7 +1,9 @@
-package project.entity;
+package poe.entity;
 
 import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * A class to represent the user in my POETracker application
@@ -20,6 +22,9 @@ public class Users {
   private String password;
   private String firstname;
   private String lastname;
+  @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+  private Set<Tasks> tasks = new HashSet<>();
+
 
   /**
    * Instantiates a new User object
@@ -124,4 +129,30 @@ public class Users {
     this.lastname = lastname;
   }
 
+  /**
+   * returns the tasks list
+   * @return
+   */
+  public Set<Tasks> getTasks() { return tasks; }
+
+  /**
+   * sets the tasks list
+   * @param tasks
+   */
+  public void setTasks(Set<Tasks> tasks) { this.tasks = tasks; }
+
+  /**
+   * Returns a string of the user and all of its variables
+   * @return
+   */
+  @Override
+  public String toString() {
+    return "Users{" +
+            "id=" + id +
+            ", username='" + username + '\'' +
+            ", password='" + password + '\'' +
+            ", firstname='" + firstname + '\'' +
+            ", lastname='" + lastname + '\'' +
+            '}';
+  }
 }

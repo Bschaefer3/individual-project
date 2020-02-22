@@ -1,10 +1,11 @@
-package project.persistence;
+package poe.persistence;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import project.entity.Users;
+import poe.entity.Users;
+import poe.test.util.Database;
 
 import java.util.List;
 
@@ -26,7 +27,7 @@ public class UsersDaoTest {
     @BeforeEach
     void setUp() {
 
-        project.test.util.Database database = project.test.util.Database.getInstance();
+        Database database = Database.getInstance();
         database.runSQL("cleandb.sql");
         dao = new UsersDao();
     }
