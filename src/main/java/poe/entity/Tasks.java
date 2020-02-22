@@ -76,6 +76,18 @@ public class Tasks {
     public void setCompletion(int completion) { this.completion = completion; }
 
     /**
+     * Returns the task's owner
+     * @return user         the task owner
+     */
+    public Users getUser() { return user; }
+
+    /**
+     * Sets the user for the current task
+     * @param user          the task owner
+     */
+    public void setUser(Users user) { this.user = user; }
+
+    /**
      * ToString method, creates an output with all of the variables
      * @return String containing all variables
      */

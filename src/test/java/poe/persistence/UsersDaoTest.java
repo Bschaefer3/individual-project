@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import poe.entity.Tasks;
 import poe.entity.Users;
 import poe.test.util.Database;
 
@@ -96,6 +97,26 @@ public class UsersDaoTest {
     void getAllSuccess() {
         List<Users> users = dao.getAll();
         assertEquals(3, users.size());
+
+    }
+
+    @Test
+    void insertWithOrderSuccess() {
+        Users newUser = new Users();
+        newUser.setId(1);
+        newUser.setUsername("Meaty");
+        newUser.setPassword("shakeshacc");
+        newUser.setFirstname("Cameron");
+        newUser.setLastname("Coomer");
+
+        String description = "Get to level 100";
+        int taskComplete = 0;
+        Tasks task = new Tasks(newUser, description, taskComplete);
+        newUser.addTask(task);
+
+        dao.insert(newUser);
+        Users retrievedUser = dao.getById(4);
+        assertEquals(3, retrievedUser.getTasks().size());
 
     }
 
