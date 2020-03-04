@@ -34,6 +34,8 @@
 - [ ] Implement GenericDao
 - [ ] Implement .equals in unit testing
 - [ ] Add PropertiesLoader from AdvJava
+- [ ] Reach 100% Coverage in Tests by adding final tests
+- [ ] (1-M) Add more test cases related to the User - Task Relationship
 
 ### Week 8
 - [ ] Weekly Journal Entry
