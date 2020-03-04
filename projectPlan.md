@@ -18,18 +18,22 @@
 - [X] Prepare for Week 5 peer design/code review
 
 ### Week 5
-- [ ] Weekly Journal Entry
-- [ ] Set up Project Lombok
-- [ ] Complete Week 5 Demo
-- [ ] Complete Week 5 Exercise
+- [X] Weekly Journal Entry
+- [ ] ~~Set up Project Lombok~~ Decided against it
+- [X] Complete Week 5 Demo
+- [X] Complete Week 5 Exercise
 
 ### Week 6
-- [ ] Weekly Journal Entry
-- [ ] 
+- [X] Weekly Journal Entry
+- [X] Complete Week 6 Assignment
+- [X] Remove Println Statements
+- [X] Research POE API for Implementation
 
 ### Week 7
 - [ ] Weekly Journal Entry
-- [ ] 
+- [ ] Implement GenericDao
+- [ ] Implement .equals in unit testing
+- [ ] Add PropertiesLoader from AdvJava
 
 ### Week 8
 - [ ] Weekly Journal Entry
