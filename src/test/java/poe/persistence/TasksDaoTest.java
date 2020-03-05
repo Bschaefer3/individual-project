@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class TasksDaoTest {
 
-    TasksDao dao;
+    GenericDao dao;
     private final Logger logger = LogManager.getLogger(this.getClass());
 
 
@@ -29,7 +29,7 @@ public class TasksDaoTest {
 
         Database database = Database.getInstance();
         database.runSQL("cleandb.sql");
-        dao = new TasksDao();
+        dao = new GenericDao(Tasks.class);
     }
 
 
@@ -39,7 +39,7 @@ public class TasksDaoTest {
     @Test
     void getByIdSuccess() {
 
-        Tasks retrievedTask = dao.getById(1);
+        Tasks retrievedTask = (Tasks)dao.getById(1);
         assertEquals(1, retrievedTask.getId());
         assertEquals("Talk to Piety", retrievedTask.getTask());
         assertEquals(0, retrievedTask.getCompletion());
@@ -51,12 +51,14 @@ public class TasksDaoTest {
      */
     @Test
     void saveOrUpdateSuccess() {
-        Tasks taskToUpdate = dao.getById(2);
         int taskComplete = 1;
+
+        Tasks taskToUpdate = (Tasks)dao.getById(2);
         taskToUpdate.setCompletion(taskComplete);
         dao.saveOrUpdate(taskToUpdate);
-        Tasks retrievedTask = dao.getById(2);
-        assertEquals(taskComplete, retrievedTask.getCompletion());
+
+        Tasks retrievedTask = (Tasks)dao.getById(2);
+        assertEquals(taskToUpdate, retrievedTask);
 
     }
 
@@ -66,8 +68,8 @@ public class TasksDaoTest {
     @Test
     void insertSuccess() {
 
-        UsersDao userDao = new UsersDao();
-        Users retrievedUser = userDao.getById(2);
+        GenericDao userDao = new GenericDao(Users.class);
+        Users retrievedUser = (Users)userDao.getById(2);
 
         Tasks newTask = new Tasks();
         newTask.setId(0);
@@ -78,11 +80,11 @@ public class TasksDaoTest {
 
         int id = dao.insert(newTask);
 
-        Tasks insertedTask = dao.getById(id);
+        Tasks insertedTask = (Tasks)dao.getById(id);
 
         assertNotEquals(0, id);
-        assertEquals("Reach act 6", insertedTask.getTask());
-        assertEquals("Honk", insertedTask.getUser().getFirstname());
+        assertEquals(newTask, insertedTask);
+
     }
 
     /**
@@ -90,9 +92,9 @@ public class TasksDaoTest {
      */
     @Test
     void deleteSuccess() {
-        Tasks toBeDeleted = dao.getById(1);
+        Tasks toBeDeleted = (Tasks)dao.getById(1);
         dao.delete(toBeDeleted);
-        Tasks retrievedTask = dao.getById(1);
+        Tasks retrievedTask = (Tasks)dao.getById(1);
         assertNull(retrievedTask);
 
     }
@@ -102,7 +104,7 @@ public class TasksDaoTest {
      */
     @Test
     void getAllSuccess() {
-        List<Tasks> tasks = dao.getAll();
+        List<Tasks> tasks = (List<Tasks>)dao.getAll();
         assertEquals(2, tasks.size());
 
     }

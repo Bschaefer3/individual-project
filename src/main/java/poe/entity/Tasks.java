@@ -3,6 +3,7 @@ package poe.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 /**
  * The Tasks Table, Holds all of the user tasks
@@ -101,4 +102,19 @@ public class Tasks {
                 '}';
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Tasks tasks = (Tasks) o;
+        return id == tasks.id &&
+                completion == tasks.completion &&
+                user.equals(tasks.user) &&
+                task.equals(tasks.task);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, user, task, completion);
+    }
 }

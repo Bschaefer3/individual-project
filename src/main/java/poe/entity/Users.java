@@ -4,6 +4,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -172,7 +173,6 @@ public class Users {
         task.setUser(null);
     }
 
-
     /**
      * Returns a string of the user and all of its variables
      *
@@ -189,4 +189,20 @@ public class Users {
                 '}';
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Users users = (Users) o;
+        return id == users.id &&
+                username.equals(users.username) &&
+                password.equals(users.password) &&
+                firstname.equals(users.firstname) &&
+                lastname.equals(users.lastname);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, username, password, firstname, lastname);
+    }
 }
