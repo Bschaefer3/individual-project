@@ -56,3 +56,6 @@ hibernate.cfg.xml
 
 # Database Properties
 database.properties
+
+# Secrets
+secrets.cfg
