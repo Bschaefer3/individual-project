@@ -31,7 +31,7 @@
 
 ### Week 7
 - [X] Weekly Journal Entry
-- [ ] Complete Week 7 Assignment
+- [X] Complete Week 7 Assignment
 - [X] Implement GenericDao
 - [X] Implement .equals in unit testing
 - [ ] ~~Add PropertiesLoader from AdvJava~~ Moved to Week 8
@@ -40,11 +40,14 @@
 
 ### Week 8
 - [ ] Weekly Journal Entry
+- [ ] Complete Week 8 Assignment
 - [ ] Complete All Table Test Daos
 - [ ] Reach 100% Coverage in Tests by adding final tests
 - [ ] Add PropertiesLoader from AdvJava
 - [ ] (1-M) Add more test cases related to the User - Task Relationship, Search for tasks by user ID, etc
-- [ ] Rank?
+- [ ] Update JSPs, give more personality and make them look pretty
+
+### ~~ Spring Break ~~
 
 ### Week 9
 - [ ] Weekly Journal Entry
