@@ -1,0 +1,26 @@
+body {
+    font-family: monospace;
+    margin: auto;
+    width: 50%;
+    text-align: center;
+}
+
+img {
+    height: 100%;
+    width: 50px;
+}
+
+label {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+input {
+    font-family: monospace;
+}
+
+button {
+    font-family: monospace;
+    border: black solid 2px;
+    font-size: 1.5em;
+}

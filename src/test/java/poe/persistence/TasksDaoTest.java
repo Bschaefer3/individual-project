@@ -105,7 +105,7 @@ public class TasksDaoTest {
     @Test
     void getAllSuccess() {
         List<Tasks> tasks = (List<Tasks>)dao.getAll();
-        assertEquals(2, tasks.size());
+        assertEquals(3, tasks.size());
 
     }
 

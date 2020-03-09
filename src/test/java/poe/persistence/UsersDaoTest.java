@@ -120,7 +120,7 @@ public class UsersDaoTest {
         dao.insert(newUser);
         Users retrievedUser = (Users)dao.getById(4);
         assertEquals(1, retrievedUser.getTasks().size());
-        assertEquals(3, tasksDao.getAll().size());
+        assertEquals(4, tasksDao.getAll().size());
         assertEquals(newUser, retrievedUser);
 
     }

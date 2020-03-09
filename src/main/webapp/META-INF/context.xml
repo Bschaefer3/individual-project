@@ -2,7 +2,7 @@
     <Realm className="org.apache.catalina.realm.JDBCRealm"
            driverName="com.mysql.cj.jdbc.Driver"
            connectionURL="jdbc:mysql://localhost:3306/test_sample?user=tomcat&amp;password=bungus"
-           userTable="user" userNameCol="username" userCredCol="password"
+           userTable="users" userNameCol="username" userCredCol="password"
            userRoleTable="ranks" roleNameCol="title" >
     </Realm>
 </Context>
