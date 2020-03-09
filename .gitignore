@@ -58,4 +58,4 @@ hibernate.cfg.xml
 database.properties
 
 # Secrets
-secrets.cfg
+src/main/resources/secrets.cfg
