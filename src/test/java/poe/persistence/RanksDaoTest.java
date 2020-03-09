@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import poe.entity.Ranks;
 import poe.entity.Tasks;
 import poe.entity.Users;
 import poe.test.util.Database;
@@ -13,13 +14,12 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Test Class for Tasks, Tests Database methods
+ * Test Class for Ranks, Tests Database methods
  */
-public class TasksDaoTest {
+public class RanksDaoTest {
 
     GenericDao dao;
     private final Logger logger = LogManager.getLogger(this.getClass());
-
 
     /**
      * Resets the Database back to it's normal state
@@ -29,9 +29,8 @@ public class TasksDaoTest {
 
         Database database = Database.getInstance();
         database.runSQL("cleandb.sql");
-        dao = new GenericDao(Tasks.class);
+        dao = new GenericDao(Ranks.class);
     }
-
 
     /**
      * Checks to see if getById works
@@ -39,11 +38,15 @@ public class TasksDaoTest {
     @Test
     void getByIdSuccess() {
 
-        Tasks retrievedTask = (Tasks)dao.getById(1);
-        assertEquals(1, retrievedTask.getId());
-        assertEquals("Talk to Piety", retrievedTask.getTask());
-        assertEquals(0, retrievedTask.getCompletion());
+        Ranks retrievedRank = (Ranks)dao.getById(1);
+        assertEquals(1, retrievedRank.getId());
+        assertEquals("admin", retrievedRank.getTitle());
 
+        GenericDao userDao = new GenericDao(Users.class);
+        Users retrievedUser = retrievedRank.getUser();
+        Users user = (Users)userDao.getById(2);
+
+        assertEquals(user, retrievedUser);
     }
 
     /**
@@ -51,15 +54,12 @@ public class TasksDaoTest {
      */
     @Test
     void saveOrUpdateSuccess() {
-        int taskComplete = 1;
+        Ranks rankToUpdate = (Ranks)dao.getById(1);
+        rankToUpdate.setTitle("user");
+        dao.saveOrUpdate(rankToUpdate);
 
-        Tasks taskToUpdate = (Tasks)dao.getById(2);
-        taskToUpdate.setCompletion(taskComplete);
-        dao.saveOrUpdate(taskToUpdate);
-
-        Tasks retrievedTask = (Tasks)dao.getById(2);
-        assertEquals(taskToUpdate, retrievedTask);
-
+        Ranks retrievedRank = (Ranks)dao.getById(1);
+        assertEquals(rankToUpdate, retrievedRank);
     }
 
     /**
@@ -71,20 +71,19 @@ public class TasksDaoTest {
         GenericDao userDao = new GenericDao(Users.class);
         Users retrievedUser = (Users)userDao.getById(2);
 
-        Tasks newTask = new Tasks();
-        newTask.setId(0);
-        newTask.setTask("Reach act 6");
-        newTask.setCompletion(0);
-        newTask.setUser(retrievedUser);
-        retrievedUser.addTask(newTask);
+        Ranks newRank = new Ranks();
+        newRank.setId(0);
+        newRank.setTitle("user");
+        newRank.setUser(retrievedUser);
+        newRank.setUsername(retrievedUser.getUsername());
+        retrievedUser.addRank(newRank);
 
-        int id = dao.insert(newTask);
+        int id = dao.insert(newRank);
 
-        Tasks insertedTask = (Tasks)dao.getById(id);
+        Ranks insertedRank = (Ranks)dao.getById(id);
 
         assertNotEquals(0, id);
-        assertEquals(newTask, insertedTask);
-
+        assertEquals(newRank, insertedRank);
     }
 
     /**
@@ -92,10 +91,10 @@ public class TasksDaoTest {
      */
     @Test
     void deleteSuccess() {
-        Tasks toBeDeleted = (Tasks)dao.getById(1);
+        Ranks toBeDeleted = (Ranks)dao.getById(1);
         dao.delete(toBeDeleted);
-        Tasks retrievedTask = (Tasks)dao.getById(1);
-        assertNull(retrievedTask);
+        Ranks retrievedRank = (Ranks)dao.getById(1);
+        assertNull(retrievedRank);
 
     }
 
@@ -104,8 +103,8 @@ public class TasksDaoTest {
      */
     @Test
     void getAllSuccess() {
-        List<Tasks> tasks = (List<Tasks>)dao.getAll();
-        assertEquals(2, tasks.size());
+        List<Ranks> ranks = (List<Ranks>)dao.getAll();
+        assertEquals(1, ranks.size());
 
     }
 

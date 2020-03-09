@@ -8,8 +8,8 @@ Weekly Reflection
 | 1/25/20| Completed watching week 1 and week 1 tasks| 2| |
 | 1/27/20| Copied and Edited the base individual project files for Week 2 | 0| |
 | 2/02/20| Completed Week 2 Tasks, Prepped for Indie Project CP1| 2| |
-| 2/09/20| Completed Indie Project CP1, Completed Week 3 Tasks| 4| |
+| 2/09/20| Completed Indie Project CP1, Completed Week 3 Tasks| 4| Week 7 Edit, Realized week tasks don't relate to project|
 | 2/16/20| Updated Indie Project CP1, Started Database Implementation| 3| |
 | 2/23/20| Implemented first DAO and Database connection, Found Item API (needs more research)| 3|
 | 3/01/20| Prepped for Project CP2, Finished Database Design, Researched StashAPI, Completed AWS connection| 6| |
-| 3/08/20| 
+| 3/08/20| Implemented GenericDao and .Equals unit testing. Implemented User Authentication and Log In System | 6| |

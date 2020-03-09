@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
 /**
- * Test Class for UserDao, Tests Database methods
+ * Test Class for Users, Tests Database methods
  */
 public class UsersDaoTest {
 
@@ -43,7 +43,7 @@ public class UsersDaoTest {
         Users retrievedUser = (Users)dao.getById(3);
         assertEquals("Arsim", retrievedUser.getFirstname());
         assertEquals("Odza", retrievedUser.getLastname());
-        assertEquals("Kurumu", retrievedUser.getUsername());
+        assertEquals("kurumu", retrievedUser.getUsername());
 
     }
 
@@ -68,8 +68,8 @@ public class UsersDaoTest {
     void insertSuccess() {
         Users newUser = new Users();
         newUser.setId(1);
-        newUser.setUsername("Meaty");
-        newUser.setPassword("shakeshacc");
+        newUser.setUsername("meaty");
+        newUser.setPassword("password4");
         newUser.setFirstname("Cameron");
         newUser.setLastname("Coomer");
         dao.insert(newUser);
@@ -105,8 +105,8 @@ public class UsersDaoTest {
     void insertWithOrderSuccess() {
         Users newUser = new Users();
         newUser.setId(1);
-        newUser.setUsername("Meaty");
-        newUser.setPassword("shakeshacc");
+        newUser.setUsername("meaty");
+        newUser.setPassword("password4");
         newUser.setFirstname("Cameron");
         newUser.setLastname("Coomer");
 
@@ -115,7 +115,7 @@ public class UsersDaoTest {
         Tasks task = new Tasks(newUser, description, taskComplete);
         newUser.addTask(task);
 
-        TasksDao tasksDao = new TasksDao();
+        GenericDao tasksDao = new GenericDao(Tasks.class);
 
         dao.insert(newUser);
         Users retrievedUser = (Users)dao.getById(4);

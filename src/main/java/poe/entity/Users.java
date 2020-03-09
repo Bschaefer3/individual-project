@@ -26,7 +26,8 @@ public class Users {
     private String lastname;
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<Tasks> tasks = new HashSet<>();
-
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<Ranks> ranks = new HashSet<>();
 
     /**
      * Instantiates a new User object
@@ -161,16 +162,46 @@ public class Users {
 
     /**
      * Adds a task to the user's task list
-     * @param task
+     * @param task user task
      */
     public void addTask(Tasks task) {
         tasks.add(task);
         task.setUser(this);
     }
 
+    /**
+     * Removes a task from the user's task list
+     * @param task user task
+     */
     public void removeTask(Tasks task) {
         tasks.remove(task);
         task.setUser(null);
+    }
+
+    /**
+     * Returns the user's ranks
+     * @return ranks list
+     */
+    public Set<Ranks> getRanks() {
+        return ranks;
+    }
+
+    /**
+     * Sets the user's ranks
+     * @param ranks rank list
+     */
+    public void setRanks(Set<Ranks> ranks) {
+        this.ranks = ranks;
+    }
+
+    public void addRank(Ranks rank) {
+        ranks.add(rank);
+        rank.setUser(this);
+    }
+
+    public void removeRank(Ranks rank) {
+        ranks.remove(rank);
+        rank.setUser(null);
     }
 
     /**

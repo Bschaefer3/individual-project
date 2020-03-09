@@ -30,16 +30,21 @@
 - [X] Research POE API for Implementation
 
 ### Week 7
-- [ ] Weekly Journal Entry
+- [X] Weekly Journal Entry
+- [ ] Complete Week 7 Assignment
 - [X] Implement GenericDao
 - [X] Implement .equals in unit testing
-- [ ] Add PropertiesLoader from AdvJava
-- [ ] Reach 100% Coverage in Tests by adding final tests
-- [ ] (1-M) Add more test cases related to the User - Task Relationship
+- [ ] ~~Add PropertiesLoader from AdvJava~~ Moved to Week 8
+- [ ] ~~Reach 100% Coverage in Tests by adding final tests~~
+- [ ] ~~(1-M) Add more test cases related to the User - Task Relationship, Search for tasks by user ID, etc~~
 
 ### Week 8
 - [ ] Weekly Journal Entry
-- [ ] 
+- [ ] Complete All Table Test Daos
+- [ ] Reach 100% Coverage in Tests by adding final tests
+- [ ] Add PropertiesLoader from AdvJava
+- [ ] (1-M) Add more test cases related to the User - Task Relationship, Search for tasks by user ID, etc
+- [ ] Rank?
 
 ### Week 9
 - [ ] Weekly Journal Entry

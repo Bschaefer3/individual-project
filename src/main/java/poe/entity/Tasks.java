@@ -6,7 +6,9 @@ import javax.persistence.*;
 import java.util.Objects;
 
 /**
- * The Tasks Table, Holds all of the user tasks
+ * The Tasks Table, Holds all of the user's tasks
+ *
+ * @author Ben Schaefer
  */
 @Entity(name = "Tasks")
 @Table(name = "tasks")
@@ -17,6 +19,9 @@ public class Tasks {
     @GenericGenerator(name = "native",strategy = "native")
     private int id;
     @ManyToOne
+    @JoinColumn(name = "user_id",
+            foreignKey = @ForeignKey(name = "tasks_user_id_fk")
+    )
     private Users user;
     private String task;
     private int completion;

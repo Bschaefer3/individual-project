@@ -1,6 +1,7 @@
 package poe.controller;
 
-import poe.persistence.UsersDao;
+import poe.entity.Users;
+import poe.persistence.GenericDao;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -27,7 +28,7 @@ public class SearchUser extends HttpServlet {
         String searchTerm = req.getParameter("term");
         String searchProperty = req.getParameter("type");
         logger.debug(searchProperty + " " + searchTerm);
-        UsersDao userSearch = new UsersDao();
+        GenericDao userSearch = new GenericDao(Users.class);
 
         if (searchTerm.equals("")) {
             req.setAttribute("users", userSearch.getAll());
