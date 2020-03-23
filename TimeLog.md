@@ -13,3 +13,5 @@ Weekly Reflection
 | 2/23/20| Implemented first DAO and Database connection, Found Item API (needs more research)| 3|
 | 3/01/20| Prepped for Project CP2, Finished Database Design, Researched StashAPI, Completed AWS connection| 6| |
 | 3/08/20| Implemented GenericDao and .Equals unit testing. Implemented User Authentication and Log In System | 6| |
+| 3/15/20| Spring Break! Didn't put any work in, oops!!| 0| |
+| 3/22/20| Completed Week 8 Assignment and Project CP 3| 5| |

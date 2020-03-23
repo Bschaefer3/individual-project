@@ -1,5 +1,19 @@
 SET FOREIGN_KEY_CHECKS = 0;
 
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users` (
+                         `id` int(11) NOT NULL AUTO_INCREMENT,
+                         `username` varchar(15) DEFAULT NULL,
+                         `password` varchar(300) DEFAULT NULL,
+                         `firstname` varchar(25) DEFAULT NULL,
+                         `lastname` varchar(30) DEFAULT NULL,
+                         PRIMARY KEY (`id`),
+                         UNIQUE KEY `user_username_uindex` (`username`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+INSERT INTO `users` VALUES (1,'thadius','password1','Chad','Thunderjock'),(2,'biggums','password2','Honk','Biggumsworth'),(3,'kurumu','password3','Arsim','Odza');
+
+
 DROP TABLE IF EXISTS `builds`;
 CREATE TABLE `builds` (
                           `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -45,7 +59,7 @@ CREATE TABLE `ranks` (
                          CONSTRAINT `ranks_users_id_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-INSERT INTO ranks VALUES (0, 'admin', 'Biggums', 2);
+INSERT INTO ranks VALUES (0, 'admin', 'biggums', 2);
 
 
 DROP TABLE IF EXISTS `stashAPI`;
@@ -72,19 +86,5 @@ CREATE TABLE `tasks` (
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='User Task List';
 
 INSERT INTO `tasks` VALUES (1,1,'Talk to Piety',0),(2,2,'Kill Kitava',0),(3,2,'Reach act 6',0);
-
-
-DROP TABLE IF EXISTS `users`;
-CREATE TABLE `users` (
-                         `id` int(11) NOT NULL AUTO_INCREMENT,
-                         `username` varchar(15) DEFAULT NULL,
-                         `password` varchar(300) DEFAULT NULL,
-                         `firstname` varchar(25) DEFAULT NULL,
-                         `lastname` varchar(30) DEFAULT NULL,
-                         PRIMARY KEY (`id`),
-                         UNIQUE KEY `user_username_uindex` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
-INSERT INTO `users` VALUES (1,'thadius','password1','Chad','Thunderjock'),(2,'biggums','password2','Honk','Biggumsworth'),(3,'kurumu','password3','Arsim','Odza');
 
 SET FOREIGN_KEY_CHECKS = 1;
