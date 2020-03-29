@@ -49,9 +49,10 @@ useful tactics and items to aid the player.
 * Dependency Management
   * Maven
 * Web Services consumed using Java
-  *
+  * POE Stash Tab API
+  * POE Item API
 * CSS 
-  * 
+  * github.com/necolas/normalize.css
 * Data Validation
   * Bootstrap Validator for front end
 * Logging
@@ -62,7 +63,6 @@ useful tactics and items to aid the player.
   * POE Item List API
   * POE Player List API
   * POE Stash Tab API
-* Project Lombok to eliminate boilerplate code like getters/setters/equals
 * Unit Testing
   * JUnit tests to achieve 80%+ code coverage 
 * IDE: IntelliJ IDEA

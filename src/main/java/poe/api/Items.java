@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.annotation.Generated;
 
 @Generated("com.robohorse.robopojogenerator")
-public class Item {
+public class Items {
 
 	@JsonProperty("leagues")
 	private List<Leagues> leagues;
