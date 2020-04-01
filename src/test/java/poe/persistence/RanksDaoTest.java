@@ -126,5 +126,30 @@ public class RanksDaoTest {
         assertEquals(allRanks, ranks);
     }
 
+    @Test
+    void getByPropertyEqualSuccess() {
+        List<Ranks> rankList = dao.getByPropertyEqual("username", "biggums");
+        Ranks retrievedRank = rankList.get(0);
+
+        logger.debug(retrievedRank);
+
+        Ranks expectedRank = (Ranks) dao.getById(1);
+
+        assertEquals("admin", retrievedRank.getTitle());
+        assertEquals(expectedRank, retrievedRank);
+    }
+
+    @Test
+    void getByPropertyLikeSuccess() {
+        List<Ranks> rankList = dao.getByPropertyLike("username", "big");
+        Ranks retrievedRank = rankList.get(0);
+
+        logger.debug(retrievedRank);
+
+        Ranks expectedRank = (Ranks) dao.getById(1);
+
+        assertEquals("admin", retrievedRank.getTitle());
+        assertEquals(expectedRank, retrievedRank);
+    }
 
 }

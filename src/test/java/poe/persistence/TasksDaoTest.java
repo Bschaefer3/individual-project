@@ -4,13 +4,11 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import poe.entity.Ranks;
 import poe.entity.Tasks;
 import poe.entity.Users;
 import poe.test.util.Database;
 
 import java.util.List;
-import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -78,6 +76,7 @@ public class TasksDaoTest {
         newTask.setTask("Reach act 6");
         newTask.setCompletion(0);
         newTask.setUser(retrievedUser);
+        newTask.setUsername(retrievedUser.getUsername());
         retrievedUser.addTask(newTask);
 
         int id = dao.insert(newTask);
@@ -116,15 +115,19 @@ public class TasksDaoTest {
         GenericDao userDao = new GenericDao(Users.class);
         Users retrievedUser = (Users)userDao.getById(2);
 
-        // task1 = task.get(0) compared to task = dao.getbyid(#) etc
+        List<Tasks> tasks = (List<Tasks>) dao.getByPropertyEqual("username", retrievedUser.getUsername());
+        Tasks task1 = tasks.get(0);
+        Tasks task2 = tasks.get(1);
 
-        Set<Tasks> tasks = retrievedUser.getTasks();
+        Tasks expectedTask1 = (Tasks)dao.getById(2);
+        Tasks expectedTask2 = (Tasks)dao.getById(3);
 
         logger.debug(tasks);
 
         assertEquals("biggums", retrievedUser.getUsername());
         assertEquals(2, tasks.size());
-        //assertEquals("", tasks);
+        assertEquals(expectedTask1, task1);
+        assertEquals(expectedTask2, task2);
     }
 
     @Test

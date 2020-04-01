@@ -23,6 +23,7 @@ public class Tasks {
             foreignKey = @ForeignKey(name = "tasks_user_id_fk")
     )
     private Users user;
+    private String username;
     private String task;
     private int completion;
 
@@ -39,8 +40,9 @@ public class Tasks {
      * @param task the task description
      * @param completion if the task is completed
      */
-    public Tasks(Users user, String task, int completion) {
+    public Tasks(Users user, String username, String task, int completion) {
         this.user = user;
+        this.username = username;
         this.task = task;
         this.completion = completion;
     }
@@ -94,6 +96,22 @@ public class Tasks {
     public void setUser(Users user) { this.user = user; }
 
     /**
+     * Returns the task owner's username
+     * @return username     the task owner's username
+     */
+    public String getUsername() {
+        return username;
+    }
+
+    /**
+     * Sets the username of the task owner
+     * @param username      the username of the task owner
+     */
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    /**
      * ToString method, creates an output with all of the variables
      * @return String containing all variables
      */
@@ -102,6 +120,7 @@ public class Tasks {
         return "Tasks{" +
                 "id=" + id +
                 ", user=" + user +
+                ", username='" + username + '\'' +
                 ", task='" + task + '\'' +
                 ", completion=" + completion +
                 '}';
@@ -115,11 +134,12 @@ public class Tasks {
         return id == tasks.id &&
                 completion == tasks.completion &&
                 user.equals(tasks.user) &&
+                username.equals(tasks.username) &&
                 task.equals(tasks.task);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, user, task, completion);
+        return Objects.hash(id, user, username, task, completion);
     }
 }

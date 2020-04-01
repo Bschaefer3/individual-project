@@ -113,7 +113,7 @@ public class UsersDaoTest {
 
         String description = "Get to level 100";
         int taskComplete = 0;
-        Tasks task = new Tasks(newUser, description, taskComplete);
+        Tasks task = new Tasks(newUser, newUser.getUsername(), description, taskComplete);
         newUser.addTask(task);
 
         GenericDao tasksDao = new GenericDao(Tasks.class);
