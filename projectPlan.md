@@ -53,13 +53,13 @@
 ### ~~ Spring Break ~~
 
 ### Week 9
-- [ ] Weekly Journal Entry
-- [ ] Complete Week 9 Assignment
+- [X] Weekly Journal Entry
+- [X] Complete Week 9 Assignment
 - [ ] Complete All Table Test Daos
 - [ ] Reach 100% Coverage in Tests by adding final tests
 - [ ] Add PropertiesLoader from AdvJava
-- [ ] (1-M) Add more test cases related to the User - Task Relationship, Search for tasks by user ID, etc
-- [ ] Update JSPs, give more personality and make them look pretty
+- [X] (1-M) Add more test cases related to the User - Task Relationship, Search for tasks by user ID, etc
+- [X] Update JSPs, give more personality and make them look pretty
 - [ ] Add more Unit Tests for ItemsDaoTest to test further API functionality
 - [ ] 
 

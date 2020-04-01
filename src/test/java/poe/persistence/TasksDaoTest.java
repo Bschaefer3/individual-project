@@ -4,11 +4,13 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import poe.entity.Ranks;
 import poe.entity.Tasks;
 import poe.entity.Users;
 import poe.test.util.Database;
 
 import java.util.List;
+import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -107,6 +109,48 @@ public class TasksDaoTest {
         List<Tasks> tasks = (List<Tasks>)dao.getAll();
         assertEquals(3, tasks.size());
 
+    }
+
+    @Test
+    void getTasksByUserIdSuccess() {
+        GenericDao userDao = new GenericDao(Users.class);
+        Users retrievedUser = (Users)userDao.getById(2);
+
+        // task1 = task.get(0) compared to task = dao.getbyid(#) etc
+
+        Set<Tasks> tasks = retrievedUser.getTasks();
+
+        logger.debug(tasks);
+
+        assertEquals("biggums", retrievedUser.getUsername());
+        assertEquals(2, tasks.size());
+        //assertEquals("", tasks);
+    }
+
+    @Test
+    void getByPropertyEqualSuccess() {
+        List<Tasks> taskList = dao.getByPropertyEqual("task", "Kill Kitava");
+        Tasks retrievedTask = taskList.get(0);
+
+        logger.debug(retrievedTask);
+
+        Tasks expectedTask = (Tasks) dao.getById(2);
+
+        assertEquals("Kill Kitava", retrievedTask.getTask());
+        assertEquals(expectedTask, retrievedTask);
+    }
+
+    @Test
+    void getByPropertyLikeSuccess() {
+        List<Tasks> taskList = dao.getByPropertyLike("task", "Reach");
+        Tasks retrievedTask = taskList.get(0);
+
+        logger.debug(retrievedTask);
+
+        Tasks expectedTask = (Tasks) dao.getById(3);
+
+        assertEquals("Reach act 6", retrievedTask.getTask());
+        assertEquals(expectedTask, retrievedTask);
     }
 
 }

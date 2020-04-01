@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import poe.entity.Ranks;
 import poe.entity.Tasks;
 import poe.entity.Users;
 import poe.test.util.Database;
@@ -102,7 +103,7 @@ public class UsersDaoTest {
     }
 
     @Test
-    void insertWithOrderSuccess() {
+    void insertWithTaskSuccess() {
         Users newUser = new Users();
         newUser.setId(1);
         newUser.setUsername("meaty");
@@ -123,6 +124,55 @@ public class UsersDaoTest {
         assertEquals(4, tasksDao.getAll().size());
         assertEquals(newUser, retrievedUser);
 
+    }
+
+    @Test
+    void insertWithRankSuccess() {
+        Users newUser = new Users();
+        newUser.setId(1);
+        newUser.setUsername("molliflower");
+        newUser.setPassword("password5");
+        newUser.setFirstname("Molly");
+        newUser.setLastname("Lindloff");
+
+        String title = "admin";
+        Ranks newRank = new Ranks(title, newUser.getUsername(), newUser);
+        newUser.addRank(newRank);
+
+        GenericDao ranksDao = new GenericDao(Ranks.class);
+
+        dao.insert(newUser);
+        Users retrievedUser = (Users)dao.getById(4);
+        assertEquals(1, retrievedUser.getRanks().size());
+        assertEquals(2, ranksDao.getAll().size());
+        assertEquals(newUser, retrievedUser);
+
+    }
+
+    @Test
+    void getByPropertyEqualSuccess() {
+        List<Users> userList = dao.getByPropertyEqual("username", "biggums");
+        Users retrievedUser = userList.get(0);
+
+        logger.debug(retrievedUser);
+
+        Users expectedUser = (Users)dao.getById(2);
+
+        assertEquals("Honk", retrievedUser.getFirstname());
+        assertEquals(expectedUser, retrievedUser);
+    }
+
+    @Test
+    void getByPropertyLikeSuccess() {
+        List<Users> userList = dao.getByPropertyLike("username", "thad");
+        Users retrievedUser = userList.get(0);
+
+        logger.debug(retrievedUser);
+
+        Users expectedUser = (Users)dao.getById(1);
+
+        assertEquals("Chad", retrievedUser.getFirstname());
+        assertEquals(expectedUser, retrievedUser);
     }
 
 }

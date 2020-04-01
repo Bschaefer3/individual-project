@@ -24,44 +24,46 @@
 <body class="container">
 
 <!-- NavBar -->
-<div class="bg-light">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a href="index.jsp" class="navbar-brand text-secondary"><i class="fab fa-amilia"></i></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse"
-                data-target="#navbar" aria-controls="navbarTogglerDemo01"
-                aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbar">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Item Search</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="oldhome.jsp">User Search</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Tips and Leveling</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Tasks</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav my-2">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Log&nbsp;In</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Sign&nbsp;Up</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+<div class="row">
+    <div class="bg-light w-100">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a href="index.jsp" class="navbar-brand text-secondary"><i class="fas fa-chess-king"></i></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbar" aria-controls="navbarTogglerDemo01"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Item Search</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="oldhome.jsp">User Search</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Tips and Leveling</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Tasks</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav my-2">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Log&nbsp;In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sign&nbsp;Up</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
 </div>
 
 <!-- Header -->
 <div class="row align-items-center bg-light mb-3">
-    <div class="col-md-7 mb-3" >
+    <div class="col-md-8 mb-3" >
         <h1><b>Your experience <br />
             <span class="text-secondary">Streamlined</span></b></h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mollis
@@ -71,8 +73,10 @@
     </div>
 
     <!-- League Title -->
-    <div class="col-md-5">
-        <img src="images/poeLogo.png" alt="Path of Exile / League: Delirium">
+    <div class="col-md-4">
+        <div class="ml-3">
+            <img class="ml-auto" src="images/poeLogo.png" alt="Path of Exile / League: Delirium">
+        </div>
     </div>
 </div>
 
@@ -97,7 +101,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-2">
-                        <h1><i class="mt-5 pr-5 text-secondary fas fa-comments"></i></h1>
+                        <h1><i class="mt-5 pr-5 text-secondary fas fa-search"></i></h1>
                     </div>
                     <div class="col-10">
                         <div class="card-body">
@@ -115,7 +119,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-2">
-                        <h1><i class="mt-5 pr-5 text-secondary fas fa-rocket"></i></h1>
+                        <h1><i class="mt-5 pr-5 text-secondary fas fa-drafting-compass"></i></h1>
                     </div>
                     <div class="col-10">
                         <div class="card-body">
@@ -134,7 +138,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-2">
-                        <h1><i class="mt-5 pr-5 text-secondary fas fa-clock"></i></h1>
+                        <h1><i class="mt-5 pr-5 text-secondary fas fa-clipboard"></i></h1>
                     </div>
                     <div class="col-10">
                         <div class="card-body">
@@ -152,7 +156,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-2">
-                        <h1><i class="mt-5 pr-5 text-secondary fas fa-cloud"></i></h1>
+                        <h1><i class="mt-5 pr-5 text-secondary fas fa-list-ul"></i></h1>
                     </div>
                     <div class="col-10">
                         <div class="card-body">

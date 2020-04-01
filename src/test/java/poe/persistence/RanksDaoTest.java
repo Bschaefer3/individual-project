@@ -105,7 +105,26 @@ public class RanksDaoTest {
     void getAllSuccess() {
         List<Ranks> ranks = (List<Ranks>)dao.getAll();
         assertEquals(1, ranks.size());
-
     }
+
+    /**
+     * Checks to see if you can grab ranks by user id
+     */
+    @Test
+    void getRanksByUserIdSuccess() {
+        GenericDao userDao = new GenericDao(Users.class);
+        Users retrievedUser = (Users)userDao.getById(2);
+
+        List<Ranks> ranks = (List<Ranks>)dao.getByPropertyEqual("username", retrievedUser.getUsername());
+
+        logger.debug(ranks);
+
+        List<Ranks> allRanks = (List<Ranks>)dao.getAll();
+
+        assertEquals("biggums", retrievedUser.getUsername());
+        assertEquals(1, ranks.size());
+        assertEquals(allRanks, ranks);
+    }
+
 
 }
