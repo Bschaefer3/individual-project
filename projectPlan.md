@@ -55,33 +55,34 @@
 ### Week 9
 - [X] Weekly Journal Entry
 - [X] Complete Week 9 Assignment
-- [ ] Complete All Table Test Daos
-- [ ] Reach 100% Coverage in Tests by adding final tests
-- [ ] Add PropertiesLoader from AdvJava
+- [X] Complete All Table Test Daos
+- [X] Reach 100% Coverage in Tests by adding final tests
+- [ ] ~~Add PropertiesLoader from AdvJava~~
 - [X] (1-M) Add more test cases related to the User - Task Relationship, Search for tasks by user ID, etc
 - [X] Update JSPs, give more personality and make them look pretty
-- [ ] Add more Unit Tests for ItemsDaoTest to test further API functionality
-- [ ] 
+- [X] Add more Unit Tests for ItemsDaoTest to test further API functionality
 
 ### Week 10
-- [ ] Weekly Journal Entry
-- [ ] 
+- [X] Weekly Journal Entry
+- [X] Unit Tests
 
 ### Week 11
-- [ ] Weekly Journal Entry
-- [ ] 
+- [X] Weekly Journal Entry
+- [X] JSPs updated
 
 ### Week 12
-- [ ] Weekly Journal Entry
-- [ ] 
+- [X] Weekly Journal Entry
+- [X] Unit Tests
 
 ### Week 13
-- [ ] Weekly Journal Entry
-- [ ] 
+- [X] Weekly Journal Entry
+- [X] Complete Week 13 Assignment
+- [ ] Add last of the table entity's
+- [X] Rework All Items Search
 
 ### Week 14
 - [ ] Weekly Journal Entry
-- [ ] 
+- [ ] Complete Week 14 Assignment
 
 ### Week 15
 - [ ] Weekly Journal Entry

@@ -6,6 +6,7 @@ import poe.api.Items;
 import poe.test.util.Database;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class ItemsDaoTest {
 
@@ -20,7 +21,18 @@ public class ItemsDaoTest {
     @Test
     public void getItemByIdSuccess() throws Exception {
         String expectedItemName = "Voidforge";
+        String wrongItemName = "Flicker Strike";
         Items returnedItem = dao.getItem(259);
-        assertEquals(expectedItemName, returnedItem.getName());
+        String itemName = returnedItem.getName();
+        assertNotEquals(wrongItemName, itemName);
+        assertEquals(expectedItemName, itemName);
     }
+
+    @Test
+    public void getItemByIdFailure() throws Exception {
+        String wrongItemName = "Voidforge";
+        Items returnedItem = dao.getItem(144);
+        assertNotEquals(wrongItemName, returnedItem.getName());
+    }
+
 }

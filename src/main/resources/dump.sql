@@ -53,6 +53,9 @@ CREATE TABLE `itemsAPI` (
   `item_id` int DEFAULT NULL,
   `name` varchar(300) DEFAULT NULL,
   `description` varchar(300) DEFAULT NULL,
+  `image` varchar(600) DEFAULT NULL,
+  `category` varchar(300) DEFAULT NULL,
+  `group` varchar(300) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -109,7 +112,7 @@ CREATE TABLE `ranks` (
   PRIMARY KEY (`id`),
   KEY `ranks_users_id_fk` (`user_id`),
   CONSTRAINT `ranks_users_id_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -118,35 +121,8 @@ CREATE TABLE `ranks` (
 
 LOCK TABLES `ranks` WRITE;
 /*!40000 ALTER TABLE `ranks` DISABLE KEYS */;
-INSERT INTO `ranks` VALUES (1,'admin','biggums',2);
+INSERT INTO `ranks` VALUES (1,'admin','biggums',2),(2,'user','biggums',2);
 /*!40000 ALTER TABLE `ranks` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `stashAPI`
---
-
-DROP TABLE IF EXISTS `stashAPI`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `stashAPI` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `item_id` int DEFAULT NULL,
-  `stashcode` int DEFAULT NULL,
-  `playercode` int DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `stashAPI_itemsAPI_id_fk` (`item_id`),
-  CONSTRAINT `stashAPI_itemsAPI_id_fk` FOREIGN KEY (`item_id`) REFERENCES `itemsAPI` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `stashAPI`
---
-
-LOCK TABLES `stashAPI` WRITE;
-/*!40000 ALTER TABLE `stashAPI` DISABLE KEYS */;
-/*!40000 ALTER TABLE `stashAPI` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -174,7 +150,7 @@ CREATE TABLE `tasks` (
 
 LOCK TABLES `tasks` WRITE;
 /*!40000 ALTER TABLE `tasks` DISABLE KEYS */;
-INSERT INTO `tasks` VALUES (1,1,NULL,'Talk to Piety',0),(2,2,NULL,'Kill Kitava',0),(3,2,NULL,'Reach act 6',0);
+INSERT INTO `tasks` VALUES (1,1,'thadius','Talk to Piety',0),(2,2,'biggums','Kill Kitava',0),(3,2,'biggums','Reach act 6',0);
 /*!40000 ALTER TABLE `tasks` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -215,4 +191,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-04-01 12:38:03
+-- Dump completed on 2020-04-26 21:07:58

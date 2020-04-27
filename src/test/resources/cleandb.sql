@@ -1,5 +1,6 @@
 SET FOREIGN_KEY_CHECKS = 0;
 
+
 --
 -- Table structure for table `builds`
 --
@@ -8,12 +9,18 @@ DROP TABLE IF EXISTS `builds`;
 CREATE TABLE `builds` (
                           `id` int NOT NULL AUTO_INCREMENT,
                           `user_id` int DEFAULT NULL,
+                          `username` varchar(300) DEFAULT NULL,
                           `build` varchar(300) DEFAULT NULL,
                           PRIMARY KEY (`id`),
                           KEY `builds_users_id_fk` (`user_id`),
                           CONSTRAINT `builds_users_id_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Dumping data for table `builds`
+--
+
+INSERT INTO `builds` VALUES (1,1,'thadius','My build will be a critical based cleave build! It will work like this...'),(2,3,'kurumu','I don\'t know what my build will be just yet.');
 
 --
 -- Table structure for table `itemsAPI`
@@ -25,8 +32,16 @@ CREATE TABLE `itemsAPI` (
                             `item_id` int DEFAULT NULL,
                             `name` varchar(300) DEFAULT NULL,
                             `description` varchar(300) DEFAULT NULL,
+                            `image` varchar(600) DEFAULT NULL,
+                            `category` varchar(300) DEFAULT NULL,
+                            `group` varchar(300) DEFAULT NULL,
                             PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `itemsAPI`
+--
+
 
 
 --
@@ -45,6 +60,11 @@ CREATE TABLE `items_builds_join` (
                                      CONSTRAINT `table_name_itemAPI_id_fk` FOREIGN KEY (`item_id`) REFERENCES `itemsAPI` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Dumping data for table `items_builds_join`
+--
+
+
 
 --
 -- Table structure for table `ranks`
@@ -59,27 +79,13 @@ CREATE TABLE `ranks` (
                          PRIMARY KEY (`id`),
                          KEY `ranks_users_id_fk` (`user_id`),
                          CONSTRAINT `ranks_users_id_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
-
-INSERT INTO `ranks` VALUES (1,'admin','biggums',2);
-
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Table structure for table `stashAPI`
+-- Dumping data for table `ranks`
 --
 
-DROP TABLE IF EXISTS `stashAPI`;
-CREATE TABLE `stashAPI` (
-                            `id` int NOT NULL AUTO_INCREMENT,
-                            `item_id` int DEFAULT NULL,
-                            `stashcode` int DEFAULT NULL,
-                            `playercode` int DEFAULT NULL,
-                            PRIMARY KEY (`id`),
-                            KEY `stashAPI_itemsAPI_id_fk` (`item_id`),
-                            CONSTRAINT `stashAPI_itemsAPI_id_fk` FOREIGN KEY (`item_id`) REFERENCES `itemsAPI` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
+INSERT INTO `ranks` VALUES (1,'admin','biggums',2),(2,'user','biggums',2);
 
 --
 -- Table structure for table `tasks`
@@ -97,9 +103,11 @@ CREATE TABLE `tasks` (
                          CONSTRAINT `tasks_user_id_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='User Task List';
 
+--
+-- Dumping data for table `tasks`
+--
 
 INSERT INTO `tasks` VALUES (1,1,'thadius','Talk to Piety',0),(2,2,'biggums','Kill Kitava',0),(3,2,'biggums','Reach act 6',0);
-
 
 --
 -- Table structure for table `users`
@@ -116,6 +124,9 @@ CREATE TABLE `users` (
                          UNIQUE KEY `user_username_uindex` (`username`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Dumping data for table `users`
+--
 
 INSERT INTO `users` VALUES (1,'thadius','password1','Chad','Thunderjock'),(2,'biggums','password2','Honk','Biggumsworth'),(3,'kurumu','password3','Arsim','Odza');
 
