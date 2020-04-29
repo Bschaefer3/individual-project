@@ -58,4 +58,7 @@ hibernate.cfg.xml
 database.properties
 
 # Secrets
-src/main/resources/secrets.cfg
+src/main/resources/secrets.xml
+
+# Sonarlint
+.idea/sonarlint

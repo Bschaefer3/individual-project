@@ -1,7 +1,7 @@
 <Context docBase="IndieProject_war" path="/IndieProject_war" reloadable="true">
     <Realm className="org.apache.catalina.realm.JDBCRealm"
            driverName="com.mysql.cj.jdbc.Driver"
-           connectionURL="jdbc:mysql://localhost:3306/IndieProject?user=tomcat&amp;password=bungus"
+           connectionURL="jdbc:mysql://localhost:3306/POETracker?user=tomcat&amp;password=bungus"
            userTable="users" userNameCol="username" userCredCol="password"
            userRoleTable="ranks" roleNameCol="title" >
     </Realm>

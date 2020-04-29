@@ -1,6 +1,5 @@
 package poe.persistence;
 
-import poe.entity.Users;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
@@ -87,7 +86,7 @@ public class GenericDao<T> {
         CriteriaBuilder builder = session.getCriteriaBuilder();
 
         CriteriaQuery<T> query = builder.createQuery( type );
-        Root<T> root = query.from( type );
+        query.from( type );
         List<T> list = session.createQuery( query ).getResultList();
 
         logger.debug("The list of users " + list);

@@ -144,7 +144,7 @@ public class UsersDaoTest {
         dao.insert(newUser);
         Users retrievedUser = (Users)dao.getById(4);
         assertEquals(1, retrievedUser.getRanks().size());
-        assertEquals(2, ranksDao.getAll().size());
+        assertEquals(3, ranksDao.getAll().size());
         assertEquals(newUser, retrievedUser);
 
     }

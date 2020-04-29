@@ -104,7 +104,7 @@ public class RanksDaoTest {
     @Test
     void getAllSuccess() {
         List<Ranks> ranks = (List<Ranks>)dao.getAll();
-        assertEquals(1, ranks.size());
+        assertEquals(2, ranks.size());
     }
 
     /**
@@ -122,7 +122,7 @@ public class RanksDaoTest {
         List<Ranks> allRanks = (List<Ranks>)dao.getAll();
 
         assertEquals("biggums", retrievedUser.getUsername());
-        assertEquals(1, ranks.size());
+        assertEquals(2, ranks.size());
         assertEquals(allRanks, ranks);
     }
 

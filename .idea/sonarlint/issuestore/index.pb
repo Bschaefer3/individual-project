@@ -1,0 +1,40 @@
+
+_
+/src/main/java/poe/services/SearchUsersById.java,1/f/1fa39990a8e24bce36afe442f7a01f07528eba39
+T
+$src/main/java/poe/entity/Builds.java,9/f/9fd867dee7320ec511f7fb2cd81158edc1b39961
+\
+,src/main/java/poe/controller/SearchUser.java,4/b/4bf1df2a98d88b8a3085d7b0b9954adcb0fca12d
+i
+9src/main/java/poe/persistence/SessionFactoryProvider.java,7/3/7373332d522d83ad32a8dad7e5ac21242f229f7b
+[
++src/main/java/poe/services/PoeServices.java,e/9/e9dd520166a9f07f8e586a32612628624f4ec53c
+[
++src/main/java/poe/persistence/ItemsDao.java,d/d/dd69ffe147f3a7e51ee0cf4465e06ff5db6a1cf6
+:
+
+.gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
+_
+/src/test/java/poe/persistence/ItemsDaoTest.java,f/0/f0f9f7a66746188a2f11daae8d79a63e71edaa05
+_
+/src/test/java/poe/persistence/RanksDaoTest.java,f/f/ffb358b0ce1f76480165de2c932b06ad37744653
+Y
+)src/test/java/poe/test/util/Database.java,7/b/7b630d0e22ba58dc0e3665576bb055191de61ec6
+>
+projectPlan.md,9/1/91f6dd151898858827b754ef8f73ad50c380874c
+K
+src/main/webapp/oldhome.jsp,3/4/340ac41954500b488c2b82260381dc4aa54011e5
+K
+src/main/webapp/results.jsp,a/0/a047297eff552188f44ca404fb93b1557c6deaad
+9
+	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+T
+$src/main/webapp/META-INF/context.xml,c/b/cbfb0d2e9b2b9fbf9d54374577c894a38643c6d0
+]
+-src/main/java/poe/persistence/GenericDao.java,4/1/41ee8839a7d08e640d3d194a5545f67968cef856
+O
+src/main/webapp/login-error.jsp,7/7/777c8d2c9c79f9e0f96db514406935f08699b848
+I
+src/main/webapp/login.jsp,8/5/85ee523d01e5e19376db640e846c91bbcb0a1c22
+P
+ src/main/java/poe/api/Items.java,6/d/6d9e7936b46cbecb8fcebf989ca23ef6d74ca3de
