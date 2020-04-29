@@ -61,4 +61,4 @@ database.properties
 src/main/resources/secrets.xml
 
 # Sonarlint
-.idea/sonarlint
+.idea/sonarlint/
