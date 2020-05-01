@@ -85,7 +85,7 @@ CREATE TABLE `ranks` (
 -- Dumping data for table `ranks`
 --
 
-INSERT INTO `ranks` VALUES (1,'admin','biggums',2),(2,'user','biggums',2);
+INSERT INTO `ranks` VALUES (1,'admin','biggums',2);
 
 --
 -- Table structure for table `tasks`

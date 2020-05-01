@@ -104,7 +104,7 @@ public class RanksDaoTest {
     @Test
     void getAllSuccess() {
         List<Ranks> ranks = (List<Ranks>)dao.getAll();
-        assertEquals(2, ranks.size());
+        assertEquals(1, ranks.size());
     }
 
     /**
@@ -122,10 +122,13 @@ public class RanksDaoTest {
         List<Ranks> allRanks = (List<Ranks>)dao.getAll();
 
         assertEquals("biggums", retrievedUser.getUsername());
-        assertEquals(2, ranks.size());
+        assertEquals(1, ranks.size());
         assertEquals(allRanks, ranks);
     }
 
+    /**
+     * Checks to see if you can grab data based on exact input
+     */
     @Test
     void getByPropertyEqualSuccess() {
         List<Ranks> rankList = dao.getByPropertyEqual("username", "biggums");
@@ -139,6 +142,9 @@ public class RanksDaoTest {
         assertEquals(expectedRank, retrievedRank);
     }
 
+    /**
+     * Checks to see if you can grab data based on like input
+     */
     @Test
     void getByPropertyLikeSuccess() {
         List<Ranks> rankList = dao.getByPropertyLike("username", "big");

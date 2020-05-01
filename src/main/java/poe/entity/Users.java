@@ -28,6 +28,8 @@ public class Users {
     private Set<Tasks> tasks = new HashSet<>();
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<Ranks> ranks = new HashSet<>();
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Builds build;
 
     /**
      * Instantiates a new User object
@@ -194,15 +196,36 @@ public class Users {
         this.ranks = ranks;
     }
 
+    /**
+     * Adds a task to the user's rank list
+     * @param rank user task
+     */
     public void addRank(Ranks rank) {
         ranks.add(rank);
         rank.setUser(this);
     }
 
+    /**
+     * Removes a task from the user's rank list
+     * @param rank user rank
+     */
     public void removeRank(Ranks rank) {
         ranks.remove(rank);
         rank.setUser(null);
     }
+
+    /**
+     * Returns the user's build
+     * @return build object
+     */
+    public Builds getBuild() { return this.build; }
+
+    /**
+     * Sets the user's build
+     * @param build build object
+     */
+    public void setBuild(Builds build) { this.build = build; }
+
 
     /**
      * Returns a string of the user and all of its variables

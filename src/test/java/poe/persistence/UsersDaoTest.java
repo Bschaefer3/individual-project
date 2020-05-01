@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import poe.entity.Builds;
 import poe.entity.Ranks;
 import poe.entity.Tasks;
 import poe.entity.Users;
@@ -144,7 +145,30 @@ public class UsersDaoTest {
         dao.insert(newUser);
         Users retrievedUser = (Users)dao.getById(4);
         assertEquals(1, retrievedUser.getRanks().size());
-        assertEquals(3, ranksDao.getAll().size());
+        assertEquals(2, ranksDao.getAll().size());
+        assertEquals(newUser, retrievedUser);
+
+    }
+
+    @Test
+    void insertWithBuildSuccess() {
+        Users newUser = new Users();
+        newUser.setId(1);
+        newUser.setUsername("dangerzone");
+        newUser.setPassword("password6");
+        newUser.setFirstname("Maverick");
+        newUser.setLastname("Airplane");
+
+        String build = "I want to do a cyclone build.";
+        Builds newBuild = new Builds(newUser, newUser.getUsername(), build);
+        newUser.setBuild(newBuild);
+
+        GenericDao buildsDao = new GenericDao(Builds.class);
+
+        dao.insert(newUser);
+        Users retrievedUser = (Users)dao.getById(4);
+        assertEquals(newBuild, retrievedUser.getBuild());
+        assertEquals(3, buildsDao.getAll().size());
         assertEquals(newUser, retrievedUser);
 
     }

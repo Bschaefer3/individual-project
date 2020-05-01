@@ -5,6 +5,13 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import java.util.Objects;
 
+/**
+ * Buiilds Table, stores the user's build idea
+ *
+ * @author Ben Schaefer
+ */
+@Entity(name = "Builds")
+@Table(name = "builds")
 public class Builds {
 
     @Id
