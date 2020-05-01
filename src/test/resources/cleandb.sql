@@ -26,8 +26,8 @@ INSERT INTO `builds` VALUES (1,1,'thadius','My build will be a critical based cl
 -- Table structure for table `itemsAPI`
 --
 
-DROP TABLE IF EXISTS `itemsAPI`;
-CREATE TABLE `itemsAPI` (
+DROP TABLE IF EXISTS `items`;
+CREATE TABLE `items` (
                             `id` int NOT NULL AUTO_INCREMENT,
                             `item_id` int DEFAULT NULL,
                             `name` varchar(300) DEFAULT NULL,
@@ -42,7 +42,7 @@ CREATE TABLE `itemsAPI` (
 -- Dumping data for table `itemsAPI`
 --
 
-
+INSERT INTO `items` VALUES (1,259,'Voidforge','http://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandSwords/Starforge.png?scale=1&w=2&h=4','weapon','twosword');
 
 --
 -- Table structure for table `items_builds_join`
@@ -57,7 +57,7 @@ CREATE TABLE `items_builds_join` (
                                      KEY `table_name_builds_id_fk` (`build_id`),
                                      KEY `table_name_itemAPI_id_fk` (`item_id`),
                                      CONSTRAINT `table_name_builds_id_fk` FOREIGN KEY (`build_id`) REFERENCES `builds` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-                                     CONSTRAINT `table_name_itemAPI_id_fk` FOREIGN KEY (`item_id`) REFERENCES `itemsAPI` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+                                     CONSTRAINT `table_name_itemAPI_id_fk` FOREIGN KEY (`item_id`) REFERENCES `items` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --

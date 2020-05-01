@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.19, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.20, for Linux (x86_64)
 --
--- Host: 127.0.0.1    Database: test_sample
+-- Host: 127.0.0.1    Database: test
 -- ------------------------------------------------------
--- Server version	8.0.19
+-- Server version	8.0.20
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -25,11 +25,12 @@ DROP TABLE IF EXISTS `builds`;
 CREATE TABLE `builds` (
   `id` int NOT NULL AUTO_INCREMENT,
   `user_id` int DEFAULT NULL,
+  `username` varchar(300) DEFAULT NULL,
   `build` varchar(300) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `builds_users_id_fk` (`user_id`),
   CONSTRAINT `builds_users_id_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,35 +39,36 @@ CREATE TABLE `builds` (
 
 LOCK TABLES `builds` WRITE;
 /*!40000 ALTER TABLE `builds` DISABLE KEYS */;
+INSERT INTO `builds` VALUES (1,1,'thadius','My build will be a critical based cleave build! It will work like this...'),(2,3,'kurumu','I don\'t know what my build will be just yet.'),(3,4,'dangerzone','I want to do a cyclone build.');
 /*!40000 ALTER TABLE `builds` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `itemsAPI`
+-- Table structure for table `items`
 --
 
-DROP TABLE IF EXISTS `itemsAPI`;
+DROP TABLE IF EXISTS `items`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `itemsAPI` (
+CREATE TABLE `items` (
   `id` int NOT NULL AUTO_INCREMENT,
   `item_id` int DEFAULT NULL,
   `name` varchar(300) DEFAULT NULL,
-  `description` varchar(300) DEFAULT NULL,
   `image` varchar(600) DEFAULT NULL,
   `category` varchar(300) DEFAULT NULL,
   `group` varchar(300) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `itemsAPI`
+-- Dumping data for table `items`
 --
 
-LOCK TABLES `itemsAPI` WRITE;
-/*!40000 ALTER TABLE `itemsAPI` DISABLE KEYS */;
-/*!40000 ALTER TABLE `itemsAPI` ENABLE KEYS */;
+LOCK TABLES `items` WRITE;
+/*!40000 ALTER TABLE `items` DISABLE KEYS */;
+INSERT INTO `items` VALUES (1,259,'Voidforge','http://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandSwords/Starforge.png?scale=1&w=2&h=4','weapon','twosword');
+/*!40000 ALTER TABLE `items` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -84,7 +86,7 @@ CREATE TABLE `items_builds_join` (
   KEY `table_name_builds_id_fk` (`build_id`),
   KEY `table_name_itemAPI_id_fk` (`item_id`),
   CONSTRAINT `table_name_builds_id_fk` FOREIGN KEY (`build_id`) REFERENCES `builds` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `table_name_itemAPI_id_fk` FOREIGN KEY (`item_id`) REFERENCES `itemsAPI` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `table_name_itemAPI_id_fk` FOREIGN KEY (`item_id`) REFERENCES `items` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -121,7 +123,7 @@ CREATE TABLE `ranks` (
 
 LOCK TABLES `ranks` WRITE;
 /*!40000 ALTER TABLE `ranks` DISABLE KEYS */;
-INSERT INTO `ranks` VALUES (1,'admin','biggums',2),(2,'user','biggums',2);
+INSERT INTO `ranks` VALUES (1,'admin','biggums',2);
 /*!40000 ALTER TABLE `ranks` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -169,7 +171,7 @@ CREATE TABLE `users` (
   `lastname` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `user_username_uindex` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -178,7 +180,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'thadius','password1','Chad','Thunderjock'),(2,'biggums','password2','Honk','Biggumsworth'),(3,'kurumu','password3','Arsim','Odza');
+INSERT INTO `users` VALUES (1,'thadius','password1','Chad','Thunderjock'),(2,'biggums','password2','Honk','Biggumsworth'),(3,'kurumu','password3','Arsim','Odza'),(4,'dangerzone','password6','Maverick','Airplane');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -191,4 +193,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-04-26 21:07:58
+-- Dump completed on 2020-04-30 22:38:07
