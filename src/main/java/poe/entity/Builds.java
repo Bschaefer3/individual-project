@@ -1,9 +1,10 @@
 package poe.entity;
 
 import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 /**
  * Buiilds Table, stores the user's build idea
@@ -25,6 +26,9 @@ public class Builds {
     private Users user;
     private String username;
     private String build;
+    @OneToMany(mappedBy = "build", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<BuildItems> pairs = new HashSet<>();
+
 
     /**
      * Instantiates a new Build object
@@ -92,6 +96,41 @@ public class Builds {
      * @param build build description
      */
     public void setBuild(String build) { this.build = build; }
+
+    /**
+     * returns the pairs list
+     *
+     * @return tasks
+     */
+    public Set<BuildItems> getPairs() {
+        return pairs;
+    }
+
+    /**
+     * sets the pairs list
+     *
+     * @param pairs     the user's list of items related to their build
+     */
+    public void setPairs(Set<BuildItems> pairs) {
+        this.pairs = pairs;
+    }
+
+    /**
+     * Adds a pair to the user's pair list
+     * @param item item
+     */
+    public void addPair(Items item) {
+        BuildItems pair = new BuildItems(this, item);
+        pairs.add(pair);
+    }
+
+    /**
+     * Removes a pair from the user's pair list
+     * @param pair build and item pair
+     */
+    public void removePair(BuildItems pair) {
+        pairs.remove(pair);
+    }
 
     @Override
     public String toString() {

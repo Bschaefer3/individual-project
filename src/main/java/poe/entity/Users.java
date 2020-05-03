@@ -226,12 +226,6 @@ public class Users {
      */
     public void setBuild(Builds build) { this.build = build; }
 
-
-    /**
-     * Returns a string of the user and all of its variables
-     *
-     * @return
-     */
     @Override
     public String toString() {
         return "Users{" +

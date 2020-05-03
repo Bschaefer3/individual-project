@@ -2,7 +2,9 @@ package poe.entity;
 
 import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 /**
  * Ranks Table, stores all of the user's ranks
@@ -16,12 +18,14 @@ public class Items {
     @GeneratedValue(strategy= GenerationType.AUTO, generator="native")
     @GenericGenerator(name = "native",strategy = "native")
     private int id;
-    @Column(name = "item_id")
+    @Column(name = "itemid")
     private int itemid;
     private String name;
     private String image;
     private String category;
-    private String group;
+    private String type;
+    @OneToMany(mappedBy = "item", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<BuildItems> pairs = new HashSet<>();
 
     /**
      * Instantiates a new Ranks object
@@ -32,12 +36,12 @@ public class Items {
     /**
      * Instantiates a new Ranks object
      */
-    public Items(int itemid, String name, String image, String category, String group) {
+    public Items(int itemid, String name, String image, String category, String type) {
         this.itemid = itemid;
         this.name = name;
         this.image = image;
         this.category = category;
-        this.group = group;
+        this.type = type;
     }
 
     /**
@@ -124,15 +128,50 @@ public class Items {
      * Returns the item group
      * @return item group
      */
-    public String getGroup() {
-        return group;
+    public String getType() {
+        return type;
     }
 
     /**
      * Sets the item group
      */
-    public void setGroup(String group) {
-        this.group = group;
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * returns the pairs list
+     *
+     * @return tasks
+     */
+    public Set<BuildItems> getPairs() {
+        return pairs;
+    }
+
+    /**
+     * sets the pairs list
+     *
+     * @param pairs     the user's list of items related to their build
+     */
+    public void setPairs(Set<BuildItems> pairs) {
+        this.pairs = pairs;
+    }
+
+    /**
+     * Adds a pair to the user's pair list
+     * @param build User's build
+     */
+    public void addPair(Builds build) {
+        BuildItems pair = new BuildItems(build, this);
+        pairs.add(pair);
+    }
+
+    /**
+     * Removes a pair from the user's pair list
+     * @param pair build and item pair
+     */
+    public void removePair(BuildItems pair) {
+        pairs.remove(pair);
     }
 
     @Override
@@ -143,7 +182,7 @@ public class Items {
                 ", name='" + name + '\'' +
                 ", image='" + image + '\'' +
                 ", category='" + category + '\'' +
-                ", group='" + group + '\'' +
+                ", type='" + type + '\'' +
                 '}';
     }
 
@@ -157,11 +196,11 @@ public class Items {
                 Objects.equals(name, items.name) &&
                 Objects.equals(image, items.image) &&
                 Objects.equals(category, items.category) &&
-                Objects.equals(group, items.group);
+                Objects.equals(type, items.type);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, itemid, name, image, category, group);
+        return Objects.hash(id, itemid, name, image, category, type);
     }
 }

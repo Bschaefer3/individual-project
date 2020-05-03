@@ -29,12 +29,11 @@ INSERT INTO `builds` VALUES (1,1,'thadius','My build will be a critical based cl
 DROP TABLE IF EXISTS `items`;
 CREATE TABLE `items` (
                             `id` int NOT NULL AUTO_INCREMENT,
-                            `item_id` int DEFAULT NULL,
+                            `itemid` int DEFAULT NULL,
                             `name` varchar(300) DEFAULT NULL,
-                            `description` varchar(300) DEFAULT NULL,
                             `image` varchar(600) DEFAULT NULL,
                             `category` varchar(300) DEFAULT NULL,
-                            `group` varchar(300) DEFAULT NULL,
+                            `type` varchar(300) DEFAULT NULL,
                             PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -51,13 +50,13 @@ INSERT INTO `items` VALUES (1,259,'Voidforge','http://web.poecdn.com/image/Art/2
 DROP TABLE IF EXISTS `items_builds_join`;
 CREATE TABLE `items_builds_join` (
                                      `id` int NOT NULL AUTO_INCREMENT,
-                                     `build_id` int DEFAULT NULL,
-                                     `item_id` int DEFAULT NULL,
+                                     `buildid` int DEFAULT NULL,
+                                     `itemid` int DEFAULT NULL,
                                      PRIMARY KEY (`id`),
-                                     KEY `table_name_builds_id_fk` (`build_id`),
-                                     KEY `table_name_itemAPI_id_fk` (`item_id`),
-                                     CONSTRAINT `table_name_builds_id_fk` FOREIGN KEY (`build_id`) REFERENCES `builds` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-                                     CONSTRAINT `table_name_itemAPI_id_fk` FOREIGN KEY (`item_id`) REFERENCES `items` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+                                     KEY `join_builds_id_fk` (`buildid`),
+                                     KEY `join_items_id_fk` (`itemid`),
+                                     CONSTRAINT `join_builds_id_fk` FOREIGN KEY (`buildid`) REFERENCES `builds` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+                                     CONSTRAINT `join_items_id_fk` FOREIGN KEY (`itemid`) REFERENCES `items` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --

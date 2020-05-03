@@ -110,6 +110,9 @@ public class TasksDaoTest {
 
     }
 
+    /**
+     * Checks to see if you can get tasks by the user who wrote them
+     */
     @Test
     void getTasksByUserIdSuccess() {
         GenericDao userDao = new GenericDao(Users.class);
@@ -130,6 +133,9 @@ public class TasksDaoTest {
         assertEquals(expectedTask2, task2);
     }
 
+    /**
+     * Checks to see if you can grab data based on exact input
+     */
     @Test
     void getByPropertyEqualSuccess() {
         List<Tasks> taskList = dao.getByPropertyEqual("task", "Kill Kitava");
@@ -143,6 +149,9 @@ public class TasksDaoTest {
         assertEquals(expectedTask, retrievedTask);
     }
 
+    /**
+     * Checks to see if you can grab data based on like input
+     */
     @Test
     void getByPropertyLikeSuccess() {
         List<Tasks> taskList = dao.getByPropertyLike("task", "Reach");
