@@ -7,9 +7,7 @@ import org.junit.jupiter.api.Test;
 import poe.entity.Tasks;
 import poe.entity.Users;
 import poe.test.util.Database;
-
 import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 /**

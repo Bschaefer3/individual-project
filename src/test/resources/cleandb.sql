@@ -63,7 +63,7 @@ CREATE TABLE `items_builds_join` (
 -- Dumping data for table `items_builds_join`
 --
 
-
+INSERT INTO `items_builds_join` VALUES (1,1,1),(2,2,1);
 
 --
 -- Table structure for table `ranks`
