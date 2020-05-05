@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.Set;
 
 /**
- * Buiilds Table, stores the user's build idea
+ * Builds Table, stores the user's build idea
  *
  * @author Ben Schaefer
  */

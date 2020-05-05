@@ -8,6 +8,7 @@ import poe.api.ItemData;
 import poe.entity.BuildItems;
 import poe.entity.Builds;
 import poe.entity.Items;
+import poe.entity.Users;
 import poe.test.util.Database;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
@@ -72,27 +73,40 @@ public class BuildItemsDaoTest {
     void insertSuccess() {
 
         GenericDao buildDao = new GenericDao(Builds.class);
-        Builds newBuild = (Builds)buildDao.getById(1);
+        Builds build = (Builds)buildDao.getById(1);
 
         ItemsDao itemsApiDao = new ItemsDao();
         GenericDao itemsDao = new GenericDao(Items.class);
         int id = itemsApiDao.addItemToDatabase(13);
-        Items newItem = (Items)dao.getById(id);
+        Items newItem = (Items)itemsDao.getById(id);
 
         BuildItems newPair = new BuildItems();
         newPair.setId(0);
-        newPair.setBuild(newBuild);
-       // TODO:: FINISH NEW PAIR WITH NEW ITEM
-        newTask.setCompletion(0);
-        retrievedUser.addTask(newTask);
+        newPair.setBuild(build);
+        newPair.setItem(newItem);
+        build.addPair(newItem);
+        newItem.addPair(build);
 
-        int id = dao.insert(newTask);
+        int newId = dao.insert(newPair);
 
-        Tasks insertedTask = (Tasks)dao.getById(id);
+        BuildItems insertedPair = (BuildItems) dao.getById(newId);
 
-        assertNotEquals(0, id);
-        assertEquals(newTask, insertedTask);
-
+        assertNotEquals(0, newId);
+        assertEquals(newPair, insertedPair);
     }
+
+    /**
+     * Checks to see if you can delete from the database successfully
+     */
+    @Test
+    void deleteSuccess() {
+        BuildItems toBeDeleted = (BuildItems) dao.getById(1);
+        dao.delete(toBeDeleted);
+        BuildItems retrievedPair = (BuildItems) dao.getById(1);
+        assertNull(retrievedPair);
+    }
+
+
+
 
 }
