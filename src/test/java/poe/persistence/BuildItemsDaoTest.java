@@ -106,7 +106,15 @@ public class BuildItemsDaoTest {
         assertNull(retrievedPair);
     }
 
+    /**
+     * Checks to see if you can grab all tasks in the database
+     */
+    @Test
+    void getAllSuccess() {
+        List<BuildItems> items = (List<BuildItems>)dao.getAll();
+        assertEquals(2, items.size());
 
+    }
 
 
 }

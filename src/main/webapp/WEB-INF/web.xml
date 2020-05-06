@@ -19,7 +19,7 @@
     <security-constraint>
         <web-resource-collection>
             <web-resource-name>search</web-resource-name>
-            <url-pattern>/searchUser.jsp</url-pattern>
+            <url-pattern>/account.jsp</url-pattern>
         </web-resource-collection>
         <auth-constraint>
             <role-name>user</role-name>
