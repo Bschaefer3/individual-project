@@ -2,9 +2,7 @@ package poe.entity;
 
 import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Builds Table, stores the user's build idea
@@ -27,7 +25,7 @@ public class Builds {
     private String username;
     private String build;
     @OneToMany(mappedBy = "build", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    private Set<BuildItems> pairs = new HashSet<>();
+    private List<BuildItems> pairs = new ArrayList<>();
 
 
     /**
@@ -102,7 +100,7 @@ public class Builds {
      *
      * @return tasks
      */
-    public Set<BuildItems> getPairs() {
+    public List<BuildItems> getPairs() {
         return pairs;
     }
 
@@ -111,7 +109,7 @@ public class Builds {
      *
      * @param pairs     the user's list of items related to their build
      */
-    public void setPairs(Set<BuildItems> pairs) {
+    public void setPairs(List<BuildItems> pairs) {
         this.pairs = pairs;
     }
 

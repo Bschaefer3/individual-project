@@ -2,9 +2,7 @@ package poe.entity;
 
 import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Ranks Table, stores all of the user's ranks
@@ -25,7 +23,7 @@ public class Items {
     private String category;
     private String type;
     @OneToMany(mappedBy = "item", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    private Set<BuildItems> pairs = new HashSet<>();
+    private List<BuildItems> pairs = new ArrayList<>();
 
     /**
      * Instantiates a new Ranks object
@@ -144,7 +142,7 @@ public class Items {
      *
      * @return tasks
      */
-    public Set<BuildItems> getPairs() {
+    public List<BuildItems> getPairs() {
         return pairs;
     }
 
@@ -153,7 +151,7 @@ public class Items {
      *
      * @param pairs     the user's list of items related to their build
      */
-    public void setPairs(Set<BuildItems> pairs) {
+    public void setPairs(List<BuildItems> pairs) {
         this.pairs = pairs;
     }
 
