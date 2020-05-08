@@ -44,3 +44,14 @@ ul {
     margin: 0 !important;
     padding: 0 !important;
 }
+
+.card-img-top {
+    height: 15vw;
+    object-fit: scale-down !important;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+

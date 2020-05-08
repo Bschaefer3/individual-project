@@ -15,7 +15,6 @@ public class PoeServices extends Application {
     @Override
     public Set<Class<?>> getClasses() {
         HashSet h = new HashSet<Class<?>>();
-        h.add(SearchUsersById.class);
         return h;
     }
 }

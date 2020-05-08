@@ -1,10 +1,11 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en" dir="ltr">
 
-<%@include file="template/header.html"%>
+<c:import url="template/header.html"/>
 <body class="container">
 
-<%@include file="template/navbar.html"%>
+<c:import url="template/navbar.jsp"/>
 
 <!-- Header -->
 <div class="row align-items-center bg-light mb-3">
@@ -130,7 +131,7 @@
     </div>
 </div>
 
-<%@include file="template/footer.html"%>
+<c:import url="template/footer.html"/>
 
 </body>
 </html>

@@ -13,7 +13,10 @@ import poe.entity.Builds;
 import poe.entity.Items;
 import poe.entity.Users;
 import poe.persistence.GenericDao;
+import poe.persistence.InfoGrabber;
+
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet (
@@ -24,34 +27,33 @@ public class Profile extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        GenericDao<Users> userDao = new GenericDao<>(Users.class);
-        GenericDao<Builds> buildDao = new GenericDao<>(Builds.class);
+        InfoGrabber info = new InfoGrabber();
 
         String username = req.getRemoteUser();
-        List<Users> users = userDao.getByPropertyEqual("username", username);
-        Users user = users.get(0);
+        Users user = info.grabUser(username);
 
         logger.info(username);
 
-        List<Builds> builds;
+        GenericDao<Builds> buildDao = new GenericDao<>(Builds.class);
+        List<Builds> builds = buildDao.getByPropertyEqual("username", username);
         Builds build = new Builds();
         List<BuildItems> pairs;
-        builds = buildDao.getByPropertyEqual("username", username);
         if (!builds.isEmpty()) {
             build = builds.get(0);
             logger.info(build);
 
-            pairs  = build.getPairs();
+            pairs = build.getPairs();
 
-            //TODO: Turn this into an Items List, for displaying on account.jsp
+            List<Items> itemList = new ArrayList<>();
             for (int i = 1; i < pairs.size(); i++) {
-                String name = "item" + i;
                 BuildItems pair = pairs.get(i);
                 Items item = pair.getItem();
 
+                itemList.add(item);
+
                 logger.info("Item Grabbed (" + i + "): " + item.getName());
 
-                req.setAttribute(name, item);
+                req.setAttribute("items", itemList);
             }
         }
 

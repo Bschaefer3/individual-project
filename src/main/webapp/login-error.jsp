@@ -1,9 +1,23 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Uh oh!</title>
-</head>
-<body>
-    Log in failed... please try again
+<html lang="en" dir="ltr">
+
+<c:import url="template/header.html"/>
+<body class="container">
+
+<c:import url="template/navbar.jsp"/>
+
+<div class="row">
+    <div class="col-6 mx-auto text-center">
+        <h3>Log-in Failed</h3>
+        <img src="images/ouch.png" alt="Ouch Text">
+        <br/>
+        <a href="profile">Try again!</a>
+    </div>
+</div>
+
+<c:import url="template/footer.html"/>
+
 </body>
 </html>
+

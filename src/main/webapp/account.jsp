@@ -2,11 +2,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en" dir="ltr">
 
-<%@include file="template/header.html"%>
+<c:import url="template/header.html"/>
 <body class="container">
 
-<%@include file="template/navbar.html"%>
-
+<c:import url="template/navbar.jsp"/>
 
     <main>
         <c:if test="${user != null}">
@@ -17,7 +16,7 @@
             </div>
 
             <div class="row">
-                <div class="col-4">
+                <div class="col-4 user-info">
                     <h3>${user.username}</h3>
                     <small>${user.firstname} ${user.lastname}</small>
                 </div>
@@ -27,22 +26,35 @@
                     <br/>
                     <p>${build.build}</p>
                     <br/>
-                    <a href="#">Edit Build</a>
+                    <a href="build">Edit Build</a>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-12">
                     <h3>Build Accessories:</h3>
-
-
+                    <a href="itemSearch">Add Item</a>
+                    <c:forEach items="${items}" var="item">
+                        <div class="col-3 img-thumbnail mb-3">
+                            <div class="card">
+                                <img class="card-img-top" src="${item.image}" alt="">
+                                <div class="card-body">
+                                    <h5 class="card-title">${item.name}</h5>
+                                    <div class="card-subtitle text-center">
+                                        <small>${item.category}</small> <br/>
+                                        <small>${item.type}</small> <br/>
+                                        <small><a class="card-link" href="#">Remove Item</a></small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </c:forEach>
                 </div>
             </div>
         </c:if>
     </main>
 
-
-<%@include file="template/footer.html"%>
+<c:import url="template/footer.html"/>
 
 </body>
 </html>

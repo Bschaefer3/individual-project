@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!-- NavBar -->
 <div class="row">
     <div class="bg-light w-100">
@@ -11,10 +12,10 @@
             <div class="collapse navbar-collapse" id="navbar">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Item Search</a>
+                        <a class="nav-link" href="itemSearchAll">Item Search</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="oldhome.jsp">User Search</a>
+                        <a class="nav-link" href="#">User Search</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Tips and Leveling</a>
@@ -30,6 +31,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Sign&nbsp;Up</a>
                     </li>
+<%--                    <li class="nav-item">--%>
+<%--                        <a class="nav-link" href="profile">Profile</a>--%>
+<%--                    </li>--%>
+<%--                    <li class="nav-item">--%>
+<%--                        <a class="nav-link" href="#">Log Out</a>--%>
+<%--                    </li>--%>
                 </ul>
             </div>
         </nav>
