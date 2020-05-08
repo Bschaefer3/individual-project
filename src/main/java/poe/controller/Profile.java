@@ -43,6 +43,7 @@ public class Profile extends HttpServlet {
 
             pairs  = build.getPairs();
 
+            //TODO: Turn this into an Items List, for displaying on account.jsp
             for (int i = 1; i < pairs.size(); i++) {
                 String name = "item" + i;
                 BuildItems pair = pairs.get(i);
