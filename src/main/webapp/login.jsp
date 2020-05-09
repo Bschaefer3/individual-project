@@ -5,7 +5,14 @@
 <c:import url="template/header.html"/>
 <body class="container">
 
-<c:import url="template/navbar.jsp"/>
+<c:choose>
+    <c:when test="${user != null}">
+        <c:import url="template/navbar.jsp"/>
+    </c:when>
+    <c:otherwise>
+        <c:import url="template/notLoggedNavBar.jsp"/>
+    </c:otherwise>
+</c:choose>
 
 <div class="col-4 mx-auto text-center">
     <h1>Log In</h1>

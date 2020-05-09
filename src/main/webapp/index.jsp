@@ -5,7 +5,14 @@
 <c:import url="template/header.html"/>
 <body class="container">
 
-<c:import url="template/navbar.jsp"/>
+<c:choose>
+    <c:when test="${user != null}">
+        <c:import url="template/navbar.jsp"/>
+    </c:when>
+    <c:otherwise>
+        <c:import url="template/notLoggedNavBar.jsp"/>
+    </c:otherwise>
+</c:choose>
 
 <!-- Header -->
 <div class="row align-items-center bg-light mb-3">
@@ -14,8 +21,15 @@
             <span class="text-secondary">Streamlined</span></b></h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mollis
             fringilla augue vel fringilla.</p>
-        <button class="btn btn-primary" type="button"> LOG IN </button>
-        <button class="btn btn-secondary" type="button"> SIGN UP </button>
+        <c:choose>
+            <c:when test="${user != null}">
+                <button class="btn btn-primary m-2" onclick="location.href='profile'" type="button">PROFILE</button>
+            </c:when>
+            <c:otherwise>
+                <button class="btn btn-primary" onclick="location.href='profile'" type="button"> LOG IN </button>
+                <button class="btn btn-secondary" onclick="self.close()" type="button"> SIGN UP </button>
+            </c:otherwise>
+        </c:choose>
     </div>
 
     <!-- League Title -->
@@ -122,12 +136,26 @@
 <!-- Footer -->
 <div class="row bg-light p-5">
     <div class="col-12 col-md-8">
-        <h2 class="font-weight-bold">Ready to start? <br />
-            <span class="text-secondary">Sign up for free today.</span></h2>
+        <c:choose>
+            <c:when test="${user != null}">
+                <h2 class="font-weight-bold">Get Started at your Profile! <br />
+            </c:when>
+            <c:otherwise>
+                <h2 class="font-weight-bold">Ready to start? <br />
+                <span class="text-secondary">Sign up for free today.</span></h2>
+            </c:otherwise>
+        </c:choose>
     </div>
     <div class="col-12 col-md-4 my-auto text-center">
-        <button class="btn btn-primary m-2" type="button">TRY IT FREE</button>
-        <button class="btn btn-secondary m-2" type="button">NO THANKS</button>
+        <c:choose>
+            <c:when test="${user != null}">
+                <button class="btn btn-primary m-2" onclick="location.href='profile'" type="button">PROFILE</button>
+            </c:when>
+            <c:otherwise>
+                <button class="btn btn-primary m-2" onclick="location.href='profile'" type="button">TRY IT FREE</button>
+                <button class="btn btn-secondary m-2" onclick="location.href='https://www.nimh.nih.gov/health/find-help/index.shtml'" type="button">NO THANKS</button>
+            </c:otherwise>
+        </c:choose>
     </div>
 </div>
 

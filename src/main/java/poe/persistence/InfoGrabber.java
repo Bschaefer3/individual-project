@@ -1,10 +1,14 @@
 package poe.persistence;
 
+import poe.controller.Build;
+import poe.entity.BuildItems;
 import poe.entity.Builds;
 import poe.entity.Items;
 import poe.entity.Users;
 
 import java.util.List;
+
+import static java.lang.Integer.parseInt;
 
 public class InfoGrabber {
 
@@ -39,5 +43,24 @@ public class InfoGrabber {
     public List<Items> grabAllItems() {
         GenericDao<Items> itemsDao = new GenericDao<>(Items.class);
         return itemsDao.getAll();
+    }
+
+    public Items grabItemToPair(String itemName, Builds build) {
+        GenericDao<Items> itemsDao = new GenericDao<>(Items.class);
+        List<Items> items = itemsDao.getByPropertyEqual("name", itemName);
+        Items item = items.get(0);
+
+        GenericDao<BuildItems> pairDao = new GenericDao<>(BuildItems.class);
+
+        BuildItems pair = new BuildItems(build, item);
+        pairDao.insert(pair);
+
+        return item;
+    }
+
+    public void removePair(String id) {
+        GenericDao<BuildItems> pairsDao = new GenericDao<>(BuildItems.class);
+        BuildItems pair = pairsDao.getById(parseInt(id));
+        pairsDao.delete(pair);
     }
 }

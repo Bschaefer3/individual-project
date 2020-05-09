@@ -8,42 +8,28 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import poe.entity.Builds;
-import poe.entity.Items;
-import poe.entity.Users;
 import poe.persistence.InfoGrabber;
 import java.io.IOException;
 
 @WebServlet (
-        urlPatterns = {"/addPair"}
+        urlPatterns = {"/removePair"}
 )
-public class AddPair extends HttpServlet {
+public class RemovePair extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String username = req.getRemoteUser();
 
-        Items item = new Items();
-        Users user = new Users();
         if (username != null) {
-            String itemName = req.getParameter("item");
+            String id = req.getParameter("id");
 
             InfoGrabber info = new InfoGrabber();
 
-            user = info.grabUser(username);
-
-            Builds build = info.grabBuild(username);
-            item = info.grabItemToPair(itemName, build);
-
-            item.addPair(build);
-            build.addPair(item);
+            info.removePair(id);
         }
 
-        req.setAttribute("user", user);
-        req.setAttribute("item", item);
-
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/addItemToList.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("profile");
         try {
             dispatcher.forward(req, resp);
         } catch (Exception e) {

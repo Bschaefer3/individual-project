@@ -32,16 +32,12 @@ public class Profile extends HttpServlet {
         String username = req.getRemoteUser();
         Users user = info.grabUser(username);
 
-        logger.info(username);
-
         GenericDao<Builds> buildDao = new GenericDao<>(Builds.class);
         List<Builds> builds = buildDao.getByPropertyEqual("username", username);
         Builds build = new Builds();
-        List<BuildItems> pairs;
+        List<BuildItems> pairs = new ArrayList<>();
         if (!builds.isEmpty()) {
             build = builds.get(0);
-            logger.info(build);
-
             pairs = build.getPairs();
 
             List<Items> itemList = new ArrayList<>();
@@ -52,9 +48,11 @@ public class Profile extends HttpServlet {
                 itemList.add(item);
 
                 logger.info("Item Grabbed (" + i + "): " + item.getName());
-
-                req.setAttribute("items", itemList);
             }
+
+            req.setAttribute("items", itemList);
+            req.setAttribute("pairs", pairs);
+
         }
 
         req.setAttribute("user", user);

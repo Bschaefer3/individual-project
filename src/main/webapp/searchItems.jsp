@@ -5,7 +5,14 @@
 <c:import url="template/header.html"/>
 <body class="container">
 
-<c:import url="template/navbar.jsp"/>
+<c:choose>
+    <c:when test="${user != null}">
+        <c:import url="template/navbar.jsp"/>
+    </c:when>
+    <c:otherwise>
+        <c:import url="template/notLoggedNavBar.jsp"/>
+    </c:otherwise>
+</c:choose>
 
 <main>
     <div class="row">
@@ -20,17 +27,17 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row justify-content-center">
         <c:forEach items="${items}" var="item">
             <div class="col-3 img-thumbnail mb-3 imageContainer">
                 <div class="card">
                     <img class="card-img-top itemImage" src="${item.image}" alt="">
-                    <div class="card-body">
+                    <div class="card-body text-center">
                         <h5 class="card-title">${item.name}</h5>
-                        <div class="card-subtitle text-center">
+                        <div class="card-subtitle">
                             <small>${item.category}</small> <br/>
                             <small>${item.type}</small> <br/>
-                            <small><a class="card-link" href="addPair">Add Item to Build</a></small>
+                            <small><a class="card-link" href="addPair?item=${item.name}">Add Item to Build</a></small>
                         </div>
                     </div>
                 </div>

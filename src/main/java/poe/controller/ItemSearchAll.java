@@ -1,6 +1,5 @@
 package poe.controller;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -25,15 +24,7 @@ public class ItemSearchAll extends HttpServlet {
 
         InfoGrabber info = new InfoGrabber();
         List<Items> itemList = info.grabAllItems();
-        req.removeAttribute("items");
-        req.setAttribute("items", itemList);
-
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/searchItems.jsp");
-        try {
-            dispatcher.forward(req, resp);
-        } catch (Exception e) {
-            logger.error("context", e);
-        }
+        ItemSearch.setUserAttribute(req, resp, info, itemList, logger);
 
     }
 }

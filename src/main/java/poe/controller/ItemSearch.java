@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import poe.entity.Items;
+import poe.entity.Users;
 import poe.persistence.InfoGrabber;
 
 import java.io.IOException;
@@ -27,8 +28,19 @@ public class ItemSearch extends HttpServlet {
 
         InfoGrabber info = new InfoGrabber();
         List<Items> itemList = info.grabItemsByName(searchTerm);
+        setUserAttribute(req, resp, info, itemList, logger);
+
+    }
+
+    static void setUserAttribute(HttpServletRequest req, HttpServletResponse resp, InfoGrabber info, List<Items> itemList, Logger logger) {
         req.removeAttribute("items");
         req.setAttribute("items", itemList);
+
+        String username = req.getRemoteUser();
+        if (username != null) {
+            Users user = info.grabUser(username);
+            req.setAttribute("user", user);
+        }
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/searchItems.jsp");
         try {
@@ -36,6 +48,5 @@ public class ItemSearch extends HttpServlet {
         } catch (Exception e) {
             logger.error("context", e);
         }
-
     }
 }

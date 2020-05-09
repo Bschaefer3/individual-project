@@ -26,10 +26,10 @@
                 </ul>
                 <ul class="navbar-nav my-2">
                     <li class="nav-item">
-                        <a class="nav-link" href="profile">Profile</a>
+                        <a class="nav-link" href="profile">Log&nbsp;In</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Log Out</a>
+                        <a class="nav-link" href="#">Sign&nbsp;Up</a>
                     </li>
                 </ul>
             </div>

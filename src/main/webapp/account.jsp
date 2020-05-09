@@ -31,25 +31,27 @@
             </div>
 
             <div class="row">
-                <div class="col-12">
-                    <h3>Build Accessories:</h3>
-                    <a href="itemSearch">Add Item</a>
-                    <c:forEach items="${items}" var="item">
-                        <div class="col-3 img-thumbnail mb-3">
-                            <div class="card">
-                                <img class="card-img-top" src="${item.image}" alt="">
-                                <div class="card-body">
-                                    <h5 class="card-title">${item.name}</h5>
-                                    <div class="card-subtitle text-center">
-                                        <small>${item.category}</small> <br/>
-                                        <small>${item.type}</small> <br/>
-                                        <small><a class="card-link" href="#">Remove Item</a></small>
-                                    </div>
+                <h3 class="col-12">Build Accessories:</h3>
+                <a href="itemSearchAll" class="padding">Add Item</a>
+            </div>
+            <div class="row justify-content-center">
+                <c:forEach items="${items}" var="item" varStatus="status">
+                    <div class="col-3 img-thumbnail mb-3 mx-1">
+                        <div class="card text-center">
+                            <img class="card-img-top" src="${item.image}" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title">${item.name}</h5>
+                                <div class="card-subtitle">
+                                    <small>${item.category}</small> <br/>
+                                    <small>${item.type}</small> <br/>
+                                    <c:set var="id" scope="page">${pairs[status.index].id}</c:set>
+                                    <c:out value="${id}"/>
+                                    <small><a class="card-link" href="removePair?id=${id}">Remove Item</a></small>
                                 </div>
                             </div>
                         </div>
-                    </c:forEach>
-                </div>
+                    </div>
+                </c:forEach>
             </div>
         </c:if>
     </main>

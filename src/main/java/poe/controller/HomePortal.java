@@ -8,48 +8,33 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import poe.entity.Builds;
-import poe.entity.Items;
 import poe.entity.Users;
 import poe.persistence.InfoGrabber;
 import java.io.IOException;
 
 @WebServlet (
-        urlPatterns = {"/addPair"}
+        urlPatterns = {"/home"}
 )
-public class AddPair extends HttpServlet {
+public class HomePortal extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        InfoGrabber info = new InfoGrabber();
+
         String username = req.getRemoteUser();
 
-        Items item = new Items();
-        Users user = new Users();
         if (username != null) {
-            String itemName = req.getParameter("item");
+            Users user = info.grabUser(username);
 
-            InfoGrabber info = new InfoGrabber();
-
-            user = info.grabUser(username);
-
-            Builds build = info.grabBuild(username);
-            item = info.grabItemToPair(itemName, build);
-
-            item.addPair(build);
-            build.addPair(item);
+            req.setAttribute("user", user);
         }
 
-        req.setAttribute("user", user);
-        req.setAttribute("item", item);
-
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/addItemToList.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/index.jsp");
         try {
             dispatcher.forward(req, resp);
         } catch (Exception e) {
             logger.error("context", e);
         }
-
     }
-
 }
