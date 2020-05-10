@@ -51,22 +51,19 @@ public class InfoGrabber {
     }
 
     public List<Items> grabItemsByPair(Builds build) {
-        List<BuildItems> pairs = build.getPairs();
+        GenericDao<BuildItems> pairDao = new GenericDao<>(BuildItems.class);
+        List<BuildItems> pairs = pairDao.getAll();
         List<Items> itemList = new ArrayList<>();
 
         Iterator<BuildItems> itr = pairs.iterator();
         while (itr.hasNext()) {
             BuildItems pair = itr.next();
-            logger.info(pair.getBuild().getId());
-            logger.info(build.getId());
             if (pair.getBuild().getId() != build.getId()) {
                 itr.remove();
             }
         }
 
-        logger.info(pairs.size());
-
-        for (int i = 1; i < pairs.size(); i++) {
+        for (int i = 0; i < pairs.size(); i++) {
             BuildItems pair = pairs.get(i);
             Items item = pair.getItem();
             itemList.add(item);

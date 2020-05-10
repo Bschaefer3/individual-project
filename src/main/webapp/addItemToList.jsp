@@ -30,7 +30,7 @@
 
     <div class="row">
         <c:if test="${item != null}">
-            <div class="img-thumbnail mb-3 imageContainer">
+            <div class="img-thumbnail mb-3 imageContainer col-12 mx-auto">
                 <div class="card">
                     <img class="card-img-top itemImage" src="${item.image}" alt="">
                     <div class="card-body text-center">

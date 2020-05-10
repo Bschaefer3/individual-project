@@ -28,7 +28,8 @@ public class RemoveItem extends HttpServlet {
 
         String admin = req.getParameter("admin");
         RequestDispatcher dispatcher;
-        if (admin.equals("true")) {
+        if (admin != null) {
+            req.getSession().removeAttribute("item");
             dispatcher = req.getRequestDispatcher("admin");
         } else {
             dispatcher = req.getRequestDispatcher("itemSearchAll");

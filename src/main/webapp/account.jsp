@@ -46,7 +46,6 @@
                                     <small>${item.category}</small> <br/>
                                     <small>${item.type}</small> <br/>
                                     <c:set var="id" scope="page">${pairs[status.index].id}</c:set>
-                                    <c:out value="${id}"/>
                                     <small><a class="card-link" href="removePair?id=${id}">Remove Item</a></small>
                                 </div>
                             </div>
