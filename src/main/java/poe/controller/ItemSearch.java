@@ -39,7 +39,7 @@ public class ItemSearch extends HttpServlet {
 
         String username = req.getRemoteUser();
         if (username != null) {
-            Users user = info.grabUser(username);
+            Users user = info.grabUserByUsername(username);
             req.setAttribute("user", user);
 
             Ranks rank = info.grabRank(user);

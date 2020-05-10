@@ -29,7 +29,7 @@ public class UpdateBuild extends HttpServlet{
         InfoGrabber info = new InfoGrabber();
 
         String username = req.getRemoteUser();
-        Users user = info.grabUser(username);
+        Users user = info.grabUserByUsername(username);
         Builds build = info.grabBuild(username);
 
         GenericDao<Builds> buildDao = new GenericDao<>(Builds.class);

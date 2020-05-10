@@ -28,7 +28,7 @@ public class Build extends HttpServlet {
 
         logger.info(username);
 
-        Users user = info.grabUser(username);
+        Users user = info.grabUserByUsername(username);
         Builds build = info.grabBuild(username);
         Ranks rank = info.grabRank(user);
 

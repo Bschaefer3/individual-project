@@ -11,6 +11,8 @@ import org.apache.logging.log4j.Logger;
 import poe.entity.*;
 import poe.persistence.InfoGrabber;
 import java.io.IOException;
+import java.util.Iterator;
+import java.util.List;
 
 @WebServlet (
         urlPatterns = {"/admin"}
@@ -25,11 +27,21 @@ public class Admin extends HttpServlet {
         Items displayItem = (Items)req.getSession().getAttribute("item");
 
         String username = req.getRemoteUser();
-        Users user = info.grabUser(username);
+        Users user = info.grabUserByUsername(username);
         Ranks rank = info.grabRank(user);
+
+        List<Users> userList = info.grabAllUsers();
+        Iterator<Users> itr = userList.iterator();
+        while (itr.hasNext()) {
+            Users current = itr.next();
+            if (current.equals(user)) {
+                itr.remove();
+            }
+        }
 
         req.setAttribute("rank", rank);
         req.setAttribute("user", user);
+        req.setAttribute("users", userList);
         req.setAttribute("item", displayItem);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/admin.jsp");

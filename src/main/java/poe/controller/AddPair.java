@@ -31,7 +31,7 @@ public class AddPair extends HttpServlet {
 
             InfoGrabber info = new InfoGrabber();
 
-            user = info.grabUser(username);
+            user = info.grabUserByUsername(username);
 
             Builds build = info.grabBuild(username);
             item = info.grabItemToPair(itemName, build);

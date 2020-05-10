@@ -27,7 +27,7 @@ public class Profile extends HttpServlet {
         InfoGrabber info = new InfoGrabber();
 
         String username = req.getRemoteUser();
-        Users user = info.grabUser(username);
+        Users user = info.grabUserByUsername(username);
         Ranks rank = info.grabRank(user);
 
         GenericDao<Builds> buildDao = new GenericDao<>(Builds.class);

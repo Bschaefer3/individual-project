@@ -44,6 +44,34 @@
             </c:if>
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-12 mx-auto">
+            <table class="table">
+                <caption>All Users</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">User name</th>
+                        <th scope="col">First name</th>
+                        <th scope="col">Last name</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <c:forEach items="${users}" var="info">
+                        <tr>
+                            <th scope="row">${info.id}</th>
+                            <td>${info.username}</td>
+                            <td>${info.firstname}</td>
+                            <td>${info.lastname}</td>
+                            <td><a href="removeUser?id=${info.id}">Delete</a></td>
+                        </tr>
+                    </c:forEach>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </main>
 
 <c:import url="template/footer.html"/>

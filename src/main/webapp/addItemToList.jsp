@@ -30,7 +30,7 @@
 
     <div class="row">
         <c:if test="${item != null}">
-            <div class="img-thumbnail mb-3 imageContainer col-12 mx-auto">
+            <div class="img-thumbnail mb-3 imageContainer col-4 mx-auto">
                 <div class="card">
                     <img class="card-img-top itemImage" src="${item.image}" alt="">
                     <div class="card-body text-center">
@@ -49,15 +49,16 @@
         <div class="col-12 mx-auto text-center">
             <c:choose>
                 <c:when test="${user != null}">
-                    <a href="profile">View Profile</a>
+                    <a href="profile" class="btn btn-primary">View Profile</a>
                 </c:when>
                 <c:otherwise>
-                    <a href="profile">Log In</a>
+                    <a href="profile" class="btn btn-primary">Log In</a>
                 </c:otherwise>
             </c:choose>
-            <a href="itemSearchAll">Back to Search</a>
+            &emsp; <a href="itemSearchAll" class="btn btn-primary">Back to Search</a>
         </div>
     </div>
+    <br>
 </main>
 
 <c:import url="template/footer.html"/>

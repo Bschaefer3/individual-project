@@ -15,8 +15,10 @@
 </c:choose>
 
     <main>
-        <div class="col-4 mx-auto text-center">
-            <h1>Log In</h1>
+        <div class="row">
+            <div class="col-4 mx-auto text-center">
+                <h1>Log In</h1>
+            </div>
         </div>
 
 
@@ -25,11 +27,11 @@
                 <form action="j_security_check" method="post">
                     <div class="form-group">
                         <label for="username">User name</label>
-                        <input type="text" id="username" name="j_username">
+                        <input type="text" id="username" name="j_username" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" id="password" name="j_password">
+                        <input type="password" id="password" name="j_password" class="form-control">
                         <small class="form-text text-muted">Never share your log-in information with anyone!</small>
                         <br />
                     </div>

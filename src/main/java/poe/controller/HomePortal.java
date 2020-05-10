@@ -26,7 +26,7 @@ public class HomePortal extends HttpServlet {
         String username = req.getRemoteUser();
 
         if (username != null) {
-            Users user = info.grabUser(username);
+            Users user = info.grabUserByUsername(username);
             Ranks rank = info.grabRank(user);
 
             req.setAttribute("rank", rank);

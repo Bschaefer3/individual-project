@@ -29,7 +29,7 @@
                         <a class="nav-link" href="profile">Log&nbsp;In</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Sign&nbsp;Up</a>
+                        <a class="nav-link" href="signup">Sign&nbsp;Up</a>
                     </li>
                 </ul>
             </div>
