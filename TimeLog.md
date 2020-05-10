@@ -20,4 +20,4 @@ Weekly Reflection
 | 4/12/20| Updated Tests | 1| |
 | 4/19/20| Updated JSPs | 1| |
 | 4/26/20| Completed Week 13, Finished adding last DAOs | 3| |
-| 5/03/20| | |
+| 5/03/20| Completed All JSP's, Added website functionality, removed UserSearch, updated AWS| a lot| |

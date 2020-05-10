@@ -6,34 +6,29 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import poe.entity.Ranks;
-import poe.entity.Users;
+import poe.entity.*;
 import poe.persistence.InfoGrabber;
 import java.io.IOException;
 
 @WebServlet (
-        urlPatterns = {"/home"}
+        urlPatterns = {"/addItem"}
 )
-public class HomePortal extends HttpServlet {
+public class AddItem extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         InfoGrabber info = new InfoGrabber();
 
-        String username = req.getRemoteUser();
+        String id = req.getParameter("newitem");
+        Items newItem = info.addItem(id);
+        req.getSession().setAttribute("item", newItem);
 
-        if (username != null) {
-            Users user = info.grabUser(username);
-            Ranks rank = info.grabRank(user);
-
-            req.setAttribute("rank", rank);
-            req.setAttribute("user", user);
-        }
-
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/index.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("admin");
         try {
             dispatcher.forward(req, resp);
         } catch (Exception e) {

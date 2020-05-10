@@ -26,11 +26,11 @@
         </auth-constraint>
     </security-constraint>
 
-    <!-- Protect everything in the admin directory -->
+    <!-- Protect the admin page -->
     <security-constraint>
         <web-resource-collection>
             <web-resource-name>admin</web-resource-name>
-            <url-pattern>/admin/*</url-pattern>
+            <url-pattern>/admin</url-pattern>
         </web-resource-collection>
         <auth-constraint>
             <role-name>admin</role-name>

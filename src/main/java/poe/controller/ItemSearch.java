@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import poe.entity.Items;
+import poe.entity.Ranks;
 import poe.entity.Users;
 import poe.persistence.InfoGrabber;
 
@@ -40,6 +41,10 @@ public class ItemSearch extends HttpServlet {
         if (username != null) {
             Users user = info.grabUser(username);
             req.setAttribute("user", user);
+
+            Ranks rank = info.grabRank(user);
+
+            req.setAttribute("rank", rank);
         }
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/searchItems.jsp");

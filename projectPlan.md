@@ -77,12 +77,17 @@
 ### Week 13
 - [X] Weekly Journal Entry
 - [X] Complete Week 13 Assignment
-- [ ] Add last of the table entity's
+- [X] Add last of the table entity's
 - [X] Rework All Items Search
 
 ### Week 14
-- [ ] Weekly Journal Entry
+- [X] Weekly Journal Entry
 - [ ] Complete Week 14 Assignment
+- [ ] Add all JSP's and Controllers
+- [ ] Add Functionality to Pages
+- [ ] Personalize!!!
+- [ ] Update AWS
+- [ ] 
 
 ### Week 15
 - [ ] Weekly Journal Entry

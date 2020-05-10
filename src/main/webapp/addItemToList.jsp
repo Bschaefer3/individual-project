@@ -16,7 +16,7 @@
 
 <main>
     <div class="row">
-        <div class="col-6 mx-auto">
+        <div class="col-12 mx-auto text-center">
             <c:choose>
                 <c:when test="${user != null}">
                     <h3>${item.name} has been added to your list!</h3>
@@ -26,6 +26,23 @@
                 </c:otherwise>
             </c:choose>
         </div>
+    </div>
+
+    <div class="row">
+        <c:if test="${item != null}">
+            <div class="img-thumbnail mb-3 imageContainer">
+                <div class="card">
+                    <img class="card-img-top itemImage" src="${item.image}" alt="">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">${item.name}</h5>
+                        <div class="card-subtitle">
+                            <small>${item.category}</small> <br/>
+                            <small>${item.type}</small> <br/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </c:if>
     </div>
 
     <div class="row">

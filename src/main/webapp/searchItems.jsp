@@ -38,6 +38,9 @@
                             <small>${item.category}</small> <br/>
                             <small>${item.type}</small> <br/>
                             <small><a class="card-link" href="addPair?item=${item.name}">Add Item to Build</a></small>
+                            <c:if test="${rank.title == 'admin'}">
+                                <br><small><a class="card-link" href="removeItem?itemid=${item.id}">Delete Item</a></small>
+                            </c:if>
                         </div>
                     </div>
                 </div>

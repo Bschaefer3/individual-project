@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import poe.entity.Builds;
+import poe.entity.Ranks;
 import poe.entity.Users;
 import poe.persistence.InfoGrabber;
 import java.io.IOException;
@@ -29,7 +30,9 @@ public class Build extends HttpServlet {
 
         Users user = info.grabUser(username);
         Builds build = info.grabBuild(username);
+        Ranks rank = info.grabRank(user);
 
+        req.setAttribute("rank", rank);
         req.setAttribute("user", user);
         req.setAttribute("build", build);
 

@@ -18,7 +18,8 @@
             <div class="row">
                 <div class="col-4 user-info">
                     <h3>${user.username}</h3>
-                    <small>${user.firstname} ${user.lastname}</small>
+                    <small>${user.firstname} ${user.lastname}</small> <br>
+                    <small>${rank.title}</small>
                 </div>
 
                 <div class="col-8">

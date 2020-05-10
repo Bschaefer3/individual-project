@@ -25,6 +25,11 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav my-2">
+                    <c:if test="${rank.title == 'admin'}">
+                        <li class="nav-item">
+                            <a class="nav-link" href="admin">Admin</a>
+                        </li>
+                    </c:if>
                     <li class="nav-item">
                         <a class="nav-link" href="profile">Profile</a>
                     </li>

@@ -6,34 +6,33 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import poe.entity.Ranks;
-import poe.entity.Users;
 import poe.persistence.InfoGrabber;
 import java.io.IOException;
 
 @WebServlet (
-        urlPatterns = {"/home"}
+        urlPatterns = {"/removeItem"}
 )
-public class HomePortal extends HttpServlet {
+public class RemoveItem extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         InfoGrabber info = new InfoGrabber();
 
-        String username = req.getRemoteUser();
+        String id = req.getParameter("itemid");
 
-        if (username != null) {
-            Users user = info.grabUser(username);
-            Ranks rank = info.grabRank(user);
+        info.removeItem(id);
 
-            req.setAttribute("rank", rank);
-            req.setAttribute("user", user);
+        String admin = req.getParameter("admin");
+        RequestDispatcher dispatcher;
+        if (admin.equals("true")) {
+            dispatcher = req.getRequestDispatcher("admin");
+        } else {
+            dispatcher = req.getRequestDispatcher("itemSearchAll");
         }
-
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/index.jsp");
         try {
             dispatcher.forward(req, resp);
         } catch (Exception e) {
