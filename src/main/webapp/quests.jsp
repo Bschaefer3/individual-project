@@ -88,15 +88,120 @@
                     <thead>
                         <tr>
                             <th scope="col">Act #</th>
-                            <th scope="col">Description</th>
+                            <th scope="col">Title</th>
                             <th scope="col">Skill Points</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <th scope="row"></th>
-                            <td></td>
-                            <td></td>
+                            <th scope="row">1</th>
+                            <td>The Dweller of the Deep</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>The Marooned Mariner</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>The Way Forward</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Deal With The Bandits</td>
+                            <td>1 or 2</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Victario's Secrets</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Piety's Pets</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>An Indomitable Spirit</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>In Service to Science</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>Kitava's Torments</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">6</th>
+                            <td>The Father of War</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">6</th>
+                            <td>The Puppet Mistress</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">6</th>
+                            <td>The Cloven One</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">7</th>
+                            <td>The Master of a Million Faces</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">7</th>
+                            <td>Queen of Despair</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">7</th>
+                            <td>Kishara's Star</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">8</th>
+                            <td>Love is Dead</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">8</th>
+                            <td>Reflection of Terror</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">8</th>
+                            <td>The Gemling Legion</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">9</th>
+                            <td>Queen of the Sands</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">9</th>
+                            <td>The Ruler of Highgate</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">10</th>
+                            <td>Vilenta's Vengeance</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">10</th>
+                            <td>An End to Hunger</td>
+                            <td>2</td>
                         </tr>
                     </tbody>
                 </table>

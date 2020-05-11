@@ -19,14 +19,12 @@ useful tactics and items to aid the player.
 
 **Main Features**:
 * Task List and Quest Watcher
-* Timer and Sets
 * User Set Goals / Tasks
 * User Profile and Build Planner
 * Tips and More Page
 
 **Secondary Features**:
 * Item Search
-* Stash Tab Viewer
 * Player Search 
 
 >"When the time comes to strike an emperor strikes without hesitation. 
@@ -43,13 +41,13 @@ useful tactics and items to aid the player.
 * Database
   * MySQL
   * Store users and roles
-  * Store all data for items and tasks.
+  * Store all data tasks and builds.
+  * Store item data and item list
 * ORM Framework
   * Hibernate 5
 * Dependency Management
   * Maven
 * Web Services consumed using Java
-  * POE Stash Tab API
   * POE Item API
 * CSS 
   * github.com/necolas/normalize.css
