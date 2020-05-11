@@ -26,7 +26,6 @@
             <div class="col-4 user-info">
                 <h3>${other.username}</h3>
                 <small>${other.firstname} ${other.lastname}</small> <br>
-                <small>${rank.title}</small>
             </div>
 
             <div class="col-8">

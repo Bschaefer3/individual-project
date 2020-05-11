@@ -34,7 +34,6 @@ public class OtherProfile extends HttpServlet {
         }
         Users otherUser = info.grabUserById(parseInt(id));
         logger.info(otherUser);
-        Ranks rank = info.grabRank(otherUser);
 
         GenericDao<Builds> buildDao = new GenericDao<>(Builds.class);
         List<Builds> builds = buildDao.getByPropertyEqual("username", otherUser.getUsername());
@@ -51,7 +50,6 @@ public class OtherProfile extends HttpServlet {
 
         req.setAttribute("items", itemList);
         req.setAttribute("pairs", pairs);
-        req.setAttribute("rank", rank);
         req.setAttribute("other", otherUser);
         req.setAttribute("build", build);
 
