@@ -21,7 +21,7 @@
                         <a class="nav-link" href="tips">Tips and Leveling</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Tasks</a>
+                        <a class="nav-link" href="quests">Tasks</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav my-2">

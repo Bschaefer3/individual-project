@@ -217,7 +217,70 @@ public class InfoGrabber {
         }
 
         return userList;
+    }
 
+    /**
+     * Removes the user from the database
+     * @param userToBeDeleted user
+     */
+    public void removeUser(Users userToBeDeleted) {
+        GenericDao<Users> dao = new GenericDao<>(Users.class);
+        dao.delete(userToBeDeleted);
+    }
+
+    /**
+     * Grabs user's tasks
+     * @param user user
+     * @return task list
+     */
+    public List<Tasks> grabTasksFromUser(Users user) {
+        GenericDao<Tasks> dao = new GenericDao<>(Tasks.class);
+        return dao.getByPropertyEqual("username", user.getUsername());
+    }
+
+    /**
+     * Adds a task to the database
+     * @param user user
+     * @param task task description
+     */
+    public void addTask(Users user, String task) {
+        GenericDao<Tasks> dao = new GenericDao<>(Tasks.class);
+        Tasks newTask = new Tasks(user, user.getUsername(), task, 0);
+        user.addTask(newTask);
+        dao.insert(newTask);
+    }
+
+    /**
+     * Grabs a task by it's ID from the database
+     * @param id task id
+     * @return task
+     */
+    public Tasks getTaskById(String id) {
+        GenericDao<Tasks> dao = new GenericDao<>(Tasks.class);
+        return dao.getById(parseInt(id));
+    }
+
+    /**
+     * Changes the task completion to complete or incomplete
+     * @param task task
+     */
+    public void updateTaskCompletion(Tasks task) {
+        GenericDao<Tasks> dao = new GenericDao<>(Tasks.class);
+        if (task.getCompletion() == 0) {
+            task.setCompletion(1);
+        } else {
+            task.setCompletion(0);
+        }
+        dao.saveOrUpdate(task);
+    }
+
+    /**
+     * Removes the task from the database
+     * @param task task
+     */
+    public void removeTask(Tasks task) {
+        GenericDao<Tasks> dao = new GenericDao<>(Tasks.class);
+        dao.delete(task);
     }
 
 }

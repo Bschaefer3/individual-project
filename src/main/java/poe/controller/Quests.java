@@ -10,24 +10,31 @@ import org.apache.logging.log4j.Logger;
 import poe.entity.*;
 import poe.persistence.InfoGrabber;
 
+import java.util.List;
+
 @WebServlet (
-        urlPatterns = {"/tips"}
+        urlPatterns = {"/quests"}
 )
-public class Tips extends HttpServlet {
+
+public class Quests extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
         InfoGrabber info = new InfoGrabber();
         String username = req.getRemoteUser();
+        Users user = new Users();
         if (username != null) {
-            Users user = info.grabUserByUsername(username);
+            user = info.grabUserByUsername(username);
             Ranks rank = info.grabRank(user);
             req.setAttribute("user", user);
             req.setAttribute("rank", rank);
         }
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/tips.jsp");
+        List<Tasks> taskList = info.grabTasksFromUser(user);
+        req.setAttribute("tasks", taskList);
+
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/quests.jsp");
         try {
             dispatcher.forward(req, resp);
         } catch (Exception e) {

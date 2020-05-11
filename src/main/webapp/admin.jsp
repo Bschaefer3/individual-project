@@ -9,6 +9,12 @@
 
 <main>
     <div class="row">
+        <div class="col-12 text-center">
+            <h1>Admin Page</h1>
+        </div>
+    </div>
+
+    <div class="row">
         <div class="col-4 user-info">
             <h3>${user.username}</h3>
             <small>${user.firstname} ${user.lastname}</small> <br>
@@ -65,7 +71,7 @@
                             <td>${info.username}</td>
                             <td>${info.firstname}</td>
                             <td>${info.lastname}</td>
-                            <td><a href="removeUser?id=${info.id}">Delete</a></td>
+                            <td><a href="removeuser?id=${info.id}">Delete</a></td>
                         </tr>
                     </c:forEach>
                 </tbody>

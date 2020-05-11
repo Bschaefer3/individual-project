@@ -11,23 +11,24 @@ import poe.entity.*;
 import poe.persistence.InfoGrabber;
 
 @WebServlet (
-        urlPatterns = {"/tips"}
+        urlPatterns = {"/error"}
 )
-public class Tips extends HttpServlet {
+public class Error extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
         InfoGrabber info = new InfoGrabber();
         String username = req.getRemoteUser();
+        Users user;
         if (username != null) {
-            Users user = info.grabUserByUsername(username);
+            user = info.grabUserByUsername(username);
             Ranks rank = info.grabRank(user);
             req.setAttribute("user", user);
             req.setAttribute("rank", rank);
         }
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/tips.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/error.jsp");
         try {
             dispatcher.forward(req, resp);
         } catch (Exception e) {

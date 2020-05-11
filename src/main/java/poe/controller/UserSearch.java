@@ -50,6 +50,8 @@ public class UserSearch extends HttpServlet {
         String username = req.getRemoteUser();
         if (username != null) {
             userList = info.removeMeFromList(userList, user);
+            Ranks rank = info.grabRank(user);
+            req.setAttribute("rank", rank);
             req.setAttribute("user", user);
         }
 
