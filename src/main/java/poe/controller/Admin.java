@@ -11,7 +11,6 @@ import org.apache.logging.log4j.Logger;
 import poe.entity.*;
 import poe.persistence.InfoGrabber;
 import java.io.IOException;
-import java.util.Iterator;
 import java.util.List;
 
 @WebServlet (
@@ -29,15 +28,8 @@ public class Admin extends HttpServlet {
         String username = req.getRemoteUser();
         Users user = info.grabUserByUsername(username);
         Ranks rank = info.grabRank(user);
-
         List<Users> userList = info.grabAllUsers();
-        Iterator<Users> itr = userList.iterator();
-        while (itr.hasNext()) {
-            Users current = itr.next();
-            if (current.equals(user)) {
-                itr.remove();
-            }
-        }
+        userList = info.removeMeFromList(userList, user);
 
         req.setAttribute("rank", rank);
         req.setAttribute("user", user);

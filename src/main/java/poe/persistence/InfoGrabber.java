@@ -33,9 +33,18 @@ public class InfoGrabber {
         return userDao.getById(id);
     }
 
+    /**
+     * Grabs all users from the database
+     * @return user list
+     */
     public List<Users> grabAllUsers() {
         GenericDao<Users> userDao = new GenericDao<>(Users.class);
         return userDao.getAll();
+    }
+
+    public List<Users> grabUsersByTerm(String searchTerm) {
+        GenericDao<Users> userDao = new GenericDao<>(Users.class);
+        return userDao.getByPropertyLike("username", searchTerm);
     }
 
     /**
@@ -191,4 +200,24 @@ public class InfoGrabber {
         GenericDao<Ranks> dao = new GenericDao<>(Ranks.class);
         dao.insert(rank);
     }
+
+    /**
+     * Grabs all user's except for the user that's logged in
+     * @param userList list of users
+     * @param user current user
+     * @return updated list of users
+     */
+    public List<Users> removeMeFromList(List<Users> userList, Users user) {
+        Iterator<Users> itr = userList.iterator();
+        while (itr.hasNext()) {
+            Users current = itr.next();
+            if (current.equals(user)) {
+                itr.remove();
+            }
+        }
+
+        return userList;
+
+    }
+
 }

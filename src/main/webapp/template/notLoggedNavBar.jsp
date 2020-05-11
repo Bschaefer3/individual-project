@@ -15,10 +15,10 @@
                         <a class="nav-link" href="itemSearchAll">Item Search</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">User Search</a>
+                        <a class="nav-link" href="userSearch">User Search</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Tips and Leveling</a>
+                        <a class="nav-link" href="tips">Tips and Leveling</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Tasks</a>
